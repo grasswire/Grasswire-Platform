@@ -1,0 +1,25 @@
+@()(implicit request: Request[Any], session: Option[com.grasswire.common.models.Session])
+
+@admin(signature = "admin") {
+   <header class="content-container">
+      <div class="content-wrapper">
+         <h1>Create Digest Email</h1>
+      </div>
+   </header>
+   <main class="content-container">
+      <div class="content-wrapper">
+         <label class="label--full">
+            How many stories would you like to appear in the digest email?
+            <input type="number" class="js-digest-limit input__number">
+         </label>
+         <button class="button js-generate-digest-next">Next</button>
+         <div class="js-digest-next" style="display: none;"></div>
+
+      </div>
+      <div class="content-wrapper js-success-email" style="display: none;">
+         <h2>Here is your email</h2>
+
+         <textarea class="js-email-content input__textarea" rows="250" cols="10"></textarea>
+      </div>
+   </main>
+}

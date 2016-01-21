@@ -1,0 +1,13 @@
+webapp:
+  dockerfile: Dockerfile.web
+  build: .
+  expose:
+   - "9000"
+  ports:
+   - "9000:9000"
+  volumes:
+   - .:/code
+   - ~/.ivy2:/root/.ivy2
+  environment:
+      VIRTUAL_HOST: playapp.docker
+  stdin_open: true

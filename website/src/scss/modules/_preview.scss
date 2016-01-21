@@ -1,0 +1,77 @@
+
+
+.preview-box {
+   @include container;
+   background: get-color(white);
+   border-top: 3px solid get-color(alto);
+   margin-bottom: 1em;
+   margin: -36px auto 30px auto;
+   max-width: $max-content-width;
+
+   &__profile {
+      padding: 20px;
+   }
+   &__image {
+      overflow: hidden;
+      position: relative;
+      height: 536px;
+      margin: 0 0 0 20px;
+      width: 96%;
+   }
+
+   &__buttons {
+      background: get-color(white);
+      border-bottom: 3px solid get-color(alto);
+      border-top: 3px solid get-color(alto);
+      max-width: $max-content-width;
+      padding: 15px 20px 18px;
+      @include last() {
+         border: none;
+      }
+   }
+
+   &__gallery {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      position: relative;
+   }
+
+   &__gallery-item {
+      display: block;
+      position: relative;
+      float: left;
+      vertical-align: middle;
+   }
+
+   &__content {
+      padding: 20px 20px 0 20px;
+
+      &-title {
+         @include font-size(16px);
+         padding: 0 20px;
+         margin: 0;
+      }
+      &-url {
+         @include font-size(12px);
+         a {
+            color: get-color(dusty-gray);
+         }
+      }
+      &-description {
+         @include font-size(20px);
+         margin: 10px 0;
+      }
+   }
+
+   &__gallery-metadata {
+      @include font-size(24px);
+      background: rgba(get-color(black), 0.8);
+      bottom: 0;
+      color: get-color(white);
+      padding: 0 20px;
+      position: absolute;
+      text-align: center;
+      width: 100%;
+   }
+}

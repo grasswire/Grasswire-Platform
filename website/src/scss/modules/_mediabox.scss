@@ -1,0 +1,96 @@
+@mixin header {
+   &__header {
+      @include container;
+      @include font-size(16px);
+      @include span(16 of 16);
+      margin-bottom: 2em;
+   }
+
+   &__avatar {
+      @include span(2 of 16);
+      height: 48px;
+      width: 48px;
+
+      img {
+         border-radius: 50%
+      }
+   }
+
+   &__userinfo {
+      @include span(8 of 16);
+      padding: 13px 0 0 13px;
+   }
+
+   &__username {
+      padding: 0 10px 0 0;
+      display: inline-block;
+   }
+
+   &__provider {
+      display: inline-block;
+   }
+
+   &__timespan {
+      @include span(last 4 of 16);
+      color: get-color(edward);
+      padding: 13px 0 0 0;
+      text-align: right;
+   }
+}
+
+@mixin video {
+   &__video-container {
+      height: 0;
+      overflow: hidden;
+      padding-bottom: 56.25%;
+      position: relative;
+      float: left; // Firefox fix...
+      width: 100%;
+   }
+
+   &__player {
+      height: 100%;
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: 100%;
+   }
+}
+
+@mixin content {
+   &__content {
+      @include span(16 of 16);
+      margin: 15px 0;
+   }
+
+   &__title {
+      @include font-size(24px);
+      margin: 0 0 20px 0;
+   }
+
+   &__see-more {
+      @include font-size(14px);
+      color: get-color(silver-chalice);
+      margin: 0 0 10px 0;
+   }
+
+   &__description {
+      @include font-size(18px);
+      margin: 10px 0;
+   }
+}
+
+.mediabox {
+   @include container;
+   @include header;
+   @include video;
+   @include content;
+
+   &--preview {
+      @include container;
+      @include header;
+      @include video;
+      @include content;
+   }
+
+}

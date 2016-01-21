@@ -1,0 +1,6 @@
+web:
+  extends:
+    file: docker.web.common.yml
+    service: webapp
+  environment:
+    GW_HOST: http://api.docker:8080/

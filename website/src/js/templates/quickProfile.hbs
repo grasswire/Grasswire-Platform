@@ -1,0 +1,37 @@
+<div class="quick-profile">
+   <img class="quick-profile__avatar" src="{{profileImageUrl}}" alt="">
+   <div class="quick-profile__info">
+      <h2>{{twitterScreenName}}</h2>
+      <h4>Current Status</h4>
+      <ul>
+         <li>{{twitterScreenName}} is currently
+            {{#if isAdmin}}
+               <span class="isAdmin">an admin</span>
+            {{else}}
+               <span class="isNotAdmin"><strong>not</strong> an admin</span>
+            {{/if}}
+         </li>
+         <li>
+            {{twitterScreenName}} is
+            {{#if hellBanned}}
+               <span class="isHellbanned">hellbanned</span>
+            {{else}}
+               <span class="isNotHellbanned"><strong>not</strong> hellbanned</span>
+            {{/if}}
+         </li>
+      </ul>
+   </div>
+   <ul class="quick-profile__controls">
+      {{#if isAdmin}}
+         <li class="quick-profile__item"><a href="#" class="button js-admin" data-username="{{twitterScreenName}}" title="">Revoke Admin Status</a></li>
+      {{else}}
+         <li class="quick-profile__item"><a href="#" class="button js-admin" data-username="{{twitterScreenName}}" title="">Make Admin</a></li>
+      {{/if}}
+
+      {{#if hellBanned}}
+         <li class="quick-profile__item"><a href="#" class="button--secondary js-hellban" data-username="{{twitterScreenName}}" data-current-hellban-status="{{hellBanned}}"  title="">Remove Ban</a></li>
+      {{else}}
+         <li class="quick-profile__item"><a href="#" class="button--secondary js-hellban" data-username="{{twitterScreenName}}" data-current-hellban-status="{{hellBanned}}"  title="">Hellban</a></li>
+      {{/if}}
+   </ul>
+</div>

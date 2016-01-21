@@ -1,0 +1,17 @@
+.isHellbanned {
+   @include get-stack(bold);
+   color: get-color(texas-rose);
+}
+.isNotHellbanned {
+   @include get-stack(bold);
+   color: get-color(boston-blue);
+}
+
+.isAdmin {
+   @include get-stack(bold);
+   color: get-color(boston-blue);
+}
+.isNotAdmin {
+   @include get-stack(bold);
+   color: get-color(texas-rose);
+}

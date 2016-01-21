@@ -1,0 +1,16 @@
+@()(implicit request: Request[Any], session: Option[com.grasswire.common.models.Session])
+<div class="masthead">
+   <div class="masthead__container">
+      <div class="logo">
+         <a title="Grasswire" href="@routes.Application.index(None)"></a>
+      </div>
+      <nav class="navigation-main">
+         <ul class="navigation__list">
+             <li><li class="navigation__item"><a href="#"class="js-toggle-lockdown button--secondary">Lock Grasswire</a></li></li>
+             <li class="navigation__item"><a href="/" class="button"> Exit Admin</a></li>
+         </ul>
+      </nav>
+   </div>
+</div>
+
+

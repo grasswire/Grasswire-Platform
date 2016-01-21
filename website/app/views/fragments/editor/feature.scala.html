@@ -1,0 +1,23 @@
+@(story: com.grasswire.common.json_models.StoryJsonModel)(implicit request: Request[Any], session: Option[com.grasswire.common.models.Session])
+<div class="wrapper">
+   <div class="js-image-container feature__image-container">
+      <div class="feature__gradient"></div>
+      <img class="feature__image js-edit-current-image js-image-checker" src="@story.coverPhoto.getOrElse(CdnAssets.at("images/default-feature.png"))" alt="">
+   </div>
+   <div class="feature--edit">
+      <div class="feature--edit__image-edit-container js-image-container">
+         <span class="fa fa-picture-o fa-3x photo-icon feature--edit__photo-icon"></span>
+         <input type="text" class="js-edit-image feature--edit__image-edit" data-current="@story.coverPhoto.getOrElse("")" value="@story.coverPhoto.getOrElse("")">
+         <a href="#" class="js-edit-cancel-image-change" title="Cancel image change"><span class="fa fa-times fa-2x feature--edit__close-image-edit"></span></a>
+      </div>
+      <div class="feature--edit__tag-container">
+         <input type="text" class="feature--edit__tag--edit js-edit-tag" data-current="@story.name" value="@story.name">
+         <button type="button" class="button--large feature--edit__hide-story js-modal-open" data-modal-id="confirm-hide">Hide Story</button>
+         <textarea class="feature--edit__text--edit js-edit-headline" data-current="@story.headline.getOrElse("")">@story.headline.getOrElse("")</textarea>
+      </div>
+   </div>
+</div>
+<h2 class="story__subheadline">The Facts</h2>
+<div class="story__summary">
+   <textarea class="input__textarea js-autofit js-edit-summary" data-current="@story.summary.getOrElse("")">@story.summary.getOrElse("")</textarea>
+</div>

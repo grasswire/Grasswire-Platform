@@ -1,0 +1,85 @@
+.profile {
+   @include container();
+   margin: 40px 0;
+   &__image {
+      @include span(8 of 16);
+      padding: 0 20px 0 0;
+      text-align: right;
+
+      @include media("<small") {
+         @include span(16 of 16);
+         padding: 0;
+         text-align: center;
+      }
+      img {
+         border-radius: 50%;
+         max-width: 115px;
+      }
+   }
+   &__info {
+      @include span(last 8 of 16);
+      padding: 0 0 0 20px;
+      @include media("<small") {
+         padding: 0;
+         text-align: center;
+      }
+      h2 {
+         @include get-stack(regular);
+         @include font-size(24px);
+         color: get-color(black);
+
+         @include media("<small") {
+            @include font-size(18px);
+         }
+
+         a {
+            color: inherit;
+
+            @include media("<small") {
+               @include font-size(16px);
+            }
+         }
+      }
+
+      @include media("<small") {
+         @include span(16 of 16);
+         text-align: center;
+      }
+   }
+
+   &__stats {
+      list-style-type: none;
+      padding: 0;
+   }
+   &__stats-item {
+      @include get-stack(light);
+      @include font-size(15px);
+
+      display: inline-block;
+      margin-right: 15px;
+      text-transform: uppercase;
+      @include last() {
+         margin-right: 0;
+      }
+      @include media("<small-tiny") {
+         display: block;
+         text-align: center;
+         margin: 0;
+         padding: 0 0 10px 0;
+      }
+      &--count {
+         @include get-stack(bold);
+         @include font-size(15px);
+         background: get-color(white);
+         border-radius: $general-border-radius;
+         color: get-stack(boston-blue);
+         margin: 3px 0;
+         padding: 3px 10px;
+         text-align: center;
+         @include media("<small-tiny") {
+            margin: 10px auto;
+            width: 30%;
+         }
+      }
+   }
+}

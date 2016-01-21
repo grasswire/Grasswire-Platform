@@ -1,0 +1,30 @@
+.admin__navigation {
+   margin: 0 auto;
+   max-width: $max-content-width;
+   padding: 15px 0;
+}
+
+.nav {
+   &__list {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+   }
+   &__item {
+      @include get-stack(bold);
+      @include font-size(14px);
+      color: get-color(dusty-gray);
+      display: inline-block;
+      padding: 0 10px;
+      text-transform: uppercase;
+
+      @include first() {
+         padding-left: 0;
+      }
+
+      @include last() {
+         padding-right: 0;
+      }
+   }
+}

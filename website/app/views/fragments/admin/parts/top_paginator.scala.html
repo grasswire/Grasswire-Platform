@@ -1,0 +1,21 @@
+@import com.grasswire.common.json_models.ChangelogJsonModel
+@import com.grasswire.common.models.PagedResult
+@(result: PagedResult[ChangelogJsonModel])(implicit request: Request[Any], session: Option[com.grasswire.common.models.Session])
+
+<ul class="paginator__list">
+   <li class="paginator__item--no-border">
+      @if(result.paging.offset > 0){
+         <a href="?max=@result.paging.limit&amp;offset=@(result.paging.offset-1)" title="Previous Page"><span class="fa fa-arrow-circle-left"></span></a>
+      }else{
+         <a href="?max=@result.paging.limit&amp;offset=0" title="Previous Page"><span class="fa fa-arrow-circle-left"></span></a>
+      }
+   </li>
+   <li class="paginator__item--message">Page @(result.paging.offset + 1) of @((result.paging.total / result.paging.limit) + 1)</li>
+   <li class="paginator__item--no-border">
+      @if(result.paging.offset <= (result.paging.total / result.paging.limit) - 1){
+         <a href="?max=@result.paging.limit&amp;offset=@(result.paging.offset+1)" title="Previous Page"><span class="fa fa-arrow-circle-right"></span></a>
+      }else{
+         <a href="?max=@result.paging.limit&amp;offset=@((result.paging.total / result.paging.limit))" title="Next Page"><span class="fa fa-arrow-circle-right"></span></a>
+      }
+   </li>
+</ul>

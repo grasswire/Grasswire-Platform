@@ -1,0 +1,27 @@
+@(msg: com.grasswire.common.json_models.PlainLinkJsonModel)(implicit request: Request[Any], session: Option[com.grasswire.common.models.Session])
+
+<div class="mediabox" data-type="link">
+   <header class="mediabox__header">
+      <div class="mediabox__avatar">
+         <img class="js-image-checker" src="@msg.user.profileImageUrl" alt="@msg.user.twitterScreenName">
+      </div>
+      <div class="mediabox__userinfo">
+         <div class="mediabox__username"><a href="//twitter.com/@(msg.user.twitterScreenName)">&#64;@(msg.user.twitterScreenName)</a></div>
+         <div class="mediabox__provider"><span class="fa fa-link accent"></span></div>
+      </div>
+      <time datetime="@{msg.createdAt/1000}" class="mediabox__timespan" data-livestamp="@{msg.createdAt/1000}"></time>
+   </header>
+   <h2 class="mediabox__title">@msg.linkData.title</h2>
+   @msg.linkData.thumbnail match {
+      case Some(thumbnail) => {
+         <div class="mediabox__visual--bigscreen">
+            <img src="@thumbnail" alt="">
+         </div>
+         }
+       case _ => {}
+   }
+   <div class="mediabox__content">
+      <p class="mediabox__description">@Html(msg.linkData.description.trim)</p>
+      <p class="mediabox__see-more">see original story at <a href="@msg.linkData.url" target="_blank" title="@msg.linkData.url">@msg.linkData.canonicalUrl</a></p>
+   </div>
+</div>

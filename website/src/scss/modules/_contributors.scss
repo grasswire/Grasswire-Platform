@@ -1,0 +1,20 @@
+.contributors {
+   &__list {
+      @include container;
+      list-style-type: none;
+      margin: 0 auto;
+      padding: 0;
+   }
+
+   &__item {
+      @include font-size(14px);
+      display:inline-block;
+      width: 144px;
+   }
+
+   &__avatar {
+      border-radius: 40px;
+      height: 80px;
+      width:  80px;
+   }
+}

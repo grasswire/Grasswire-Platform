@@ -1,0 +1,17 @@
+@import com.grasswire.common.json_models._
+@()(implicit request: Request[Any], session: Option[com.grasswire.common.models.Session])
+
+<div class="modal js-modal" data-modal-content-id="confirm-hide" data-trigger-on-mobile="true">
+   <div class="modal__masthead">
+      <h2>Please Confirm</h2>
+      <h3>You're about to hide a story for everyone</h3>
+      <a href="#" class="js-modal-close modal__closer"><span class="fa fa-close"></span></a>
+   </div>
+   <div class="modal__content--large">
+      <p>Hiding this story will remove it from the home page for all Grasswire visitors. Are you sure?</p>
+   </div>
+   <div class="modal__footer">
+      <button type="button" class="button js-hide-story">Yes, hide the story</button>
+      <a href="#" class="button--secondary js-modal-close">Cancel</a>
+   </div>
+</div>

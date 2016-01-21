@@ -1,0 +1,30 @@
+.quick-profile {
+   @include container;
+   margin-top: 30px;
+
+   &__avatar {
+      border-radius: 50%;
+      @include span(4 of 16);
+   }
+   &__info {
+      @include font-size(18px);
+      @include span(last 12 of 16);
+      padding: 0 0 0 20px;
+   }
+
+   &__controls {
+      @include container();
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+   }
+
+   &__item {
+      display: inline-block;
+      padding: 10px 20px;
+
+      @include last() {
+         float: right;
+      }
+   }
+}

@@ -1,0 +1,14 @@
+@import com.grasswire.common.json_models._
+@()(implicit request: Request[Any], session: Option[com.grasswire.common.models.Session])
+
+<div class="modal js-modal" data-modal-content-id="copy-link" data-trigger-on-mobile="true">
+   <div class="modal__masthead">
+      <h2>Copy Story Link</h2>
+      <h3>Copy the link below to easily share with friends.</h3>
+      <a href="#" class="js-modal-close modal__closer"><span class="fa fa-close js-close-modal"></span></a>
+   </div>
+   <div class="modal__content js-modal-content">
+      <input class="input__link-content js-copy-link-content" type="text" value="">
+   </div>
+   <div class="modal__footer--no-border"></div>
+</div>

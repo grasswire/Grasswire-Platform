@@ -1,0 +1,12 @@
+@import com.grasswire.common.json_models._
+@()(implicit request: Request[Any], session: Option[com.grasswire.common.models.Session])
+
+<div class="modal js-modal" data-modal-content-id="login_required" data-trigger-on-mobile="true">
+   <div class="modal__masthead">
+      <h2>Login to Grasswire with Twitter</h2>
+      <a href="#" class="js-modal-close modal__closer"><span class="fa fa-close js-close-modal"></span></a>
+   </div>
+   <div class="modal--login__content">
+      <a href="/auth/twitter" class="button"><span class="fa fa-twitter"></span> Connect to Twitter</a>
+   </div>
+</div>

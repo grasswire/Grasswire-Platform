@@ -1,0 +1,9 @@
+<ul class="contributors__list">
+    {{#each people}}
+       <li class="contributors__item">
+           <img class="contributors__avatar" src="{{this.profileImageUrl}}" alt="{{this.twitterScreenName}}">
+           <p>@{{this.twitterScreenName}}</p>
+       </li>
+    {{/each}}
+</ul>
+

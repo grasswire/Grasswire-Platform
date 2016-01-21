@@ -1,0 +1,20 @@
+#!/bin/bash
+
+# npm is annoying and you need to change
+# the directory...
+#
+pushd website
+# pull in any new files remove any dead
+# or no longer necessary things
+npm install
+npm prune
+
+
+# get a local instance of gulp running...
+gulp boot
+gulp &
+
+# stupid npm...
+popd
+# turn on the local server...
+./activator "project website" run

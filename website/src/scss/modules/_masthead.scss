@@ -1,0 +1,98 @@
+// Local Colors ...............................................................
+
+
+// Local Mixins ...............................................................
+@mixin masthead-logo-settings {
+   background-size: contain;
+   display: inline-block;
+   max-height: $masthead-height;
+   min-height: 100%;
+   vertical-align: middle;
+   width: 290px;
+}
+
+// CSS ........................................................................
+.masthead {
+   position: fixed;
+   top: 0;
+   width: 100%;
+   z-index: set-zindex(35);
+
+   &__container {
+      @include container;
+      @include font-size(15px);
+      height: $masthead-height;
+      max-width: 1600px;
+      z-index: set-zindex(6);
+   }
+
+   &__wrapper {
+      background: get-color(pelorous);
+      width: 100%;
+
+   }
+}
+
+.reader {
+   .logo {
+      @include media("<=medium") {
+         margin-left: 50px;
+      }
+
+      @include media("<=small") {
+         margin-left: 50px;
+      }
+   }
+}
+
+.logo {
+   @include span(16 of 16);
+   height: $masthead-height;
+   padding: 16px 0;
+   text-align: center;
+   vertical-align: middle;
+
+   @include media("<=medium") {
+      padding: 16px 15px;
+      text-align: left;
+   }
+
+   a {
+      background: transparent url(../images/logo-inline.svg) 50% 3px no-repeat;
+      @include masthead-logo-settings;
+
+      @include media("<=xlarge") {
+         background: transparent url(../images/logo-no-tagline.svg) 50% 0 no-repeat;
+         @include masthead-logo-settings;
+      }
+
+      @include media("<=medium") {
+         background: transparent url(../images/logo-no-tagline.svg) 0px 0 no-repeat;
+         @include masthead-logo-settings;
+      }
+
+      @include media("<=small") {
+         background: transparent url(../images/logo-icon.svg) 0px 0 no-repeat;
+         @include masthead-logo-settings;
+      }
+
+   }
+}
+
+/**
+ * The publish changes button is too large
+ * so we need to move the logo over to
+ * the right when we go into edit or
+ * add-new mode so that nothing
+ * overlaps
+ */
+.editor, .add-new {
+   .logo {
+      padding: 16px 15px;
+      text-align: left;
+
+      a {
+         @include masthead-logo-settings;
+      }
+   }
+}

@@ -1,0 +1,16 @@
+@()(implicit request: Request[Any], session: Option[com.grasswire.common.models.Session])
+
+@admin(signature = "admin") {
+   <header class="content-container">
+      <div class="content-wrapper">
+         <h1>Live Setup</h1>
+      </div>
+   </header>
+   <main class="content-container">
+      <div class="content-wrapper">
+         <input class="input__text--full js-live-title" type="text" name="" value="" placeholder="Enter a Title"><br><br>
+         <input class="input__text--full js-live-embed" type="text" name="" value="" placeholder="Enter an Embed Video URL"><br><br>
+         <button type="submit" class="button js-live-button-start">Start</button>
+      </div>
+   </main>
+}

@@ -1,0 +1,26 @@
+.live, .user-profile {
+   .site__footer {
+      display: none;
+   }
+}
+
+
+.site__footer {
+   margin: 60px 0;
+}
+.footer {
+   &__wrapper {
+      margin: 0 auto;
+      max-width: 1600px;
+      text-align: center;
+   }
+
+   &__message {
+      @include get-stack(light);
+      @include font-size(24px);
+      background: get-color(light-boston-blue);
+      color: get-color(white);
+      padding: 10px 0;
+      text-align: center;
+   }
+}

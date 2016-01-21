@@ -1,0 +1,60 @@
+@()(implicit request: Request[Any], session: Option[com.grasswire.common.models.Session])
+
+@head = {
+   <title>Create New Story &#124; Grasswire &#124; Your Newsroom</title>
+   <meta name="description" content="Create New Story &#124; Grasswire &#124; Your Newsroom">
+   <meta property="og:title" content="Create New Story &#124; Grasswire | Your Newsroom">
+   <meta property="og:type" content="website">
+   <meta property="og:url" content="https://@request.host">
+   <meta property="og:image" content="https:@CdnAssets.at("images/favicon.png")">
+   <meta property="og:description" content="Grasswire is a collaborative newsroom that anyone can edit and curate">
+   <meta name="twitter:card" content="summary_large_image">
+   <meta name="twitter:site" content="@@grasswire">
+   <meta name="twitter:title" content="Create New Story &#124; Grasswire | Your Newsroom">
+   <meta name="twitter:description" content="Grasswire is a collaborative newsroom that anyone can edit and curate">
+   <meta name="twitter:creator" content="@@grasswire">
+   <meta name="twitter:image" content="https:@CdnAssets.at("images/favicon.png")">
+   <meta name="twitter:url" content="https://@request.host">
+}
+
+@main(signature = "add-new", head = head) {
+<header class="story__header">
+   <h1>Create New Story</h1>
+   <h2>All Fields Are Required to Publish</h2>
+</header>
+<form class="js-validate-new-story">
+   <ul class="story__list">
+      <li class="story__item--feature" >
+         <div class="wrapper">
+            <div class="feature__image-container">
+               <div class="feature__gradient"></div>
+               <img class="feature__image js-show-new-current-image" src="@CdnAssets.at("images/default-feature.png")" alt="">
+            </div>
+            <div class="feature--edit">
+               <div class="feature--edit__image-edit-container js-image-container">
+                  <span class="fa fa-picture-o fa-3x photo-icon feature--edit__photo-icon"></span>
+                  <input type="text" class="js-show-new-image feature--edit__image-edit" value="Add a New Image"  name="url" type="url">
+                  <a href="#" class="js-edit-cancel-image-change" title="Cancel image change"><span class="fa fa-times fa-2x feature--edit__close-image-edit"></span></a>
+               </div>
+               <div class="feature--edit__tag-container">
+                     <div class="char-count--title js-char-placeholder">30</div>
+                     <input type="text" class="feature--edit__tag--edit js-new-name js-char-counter" data-maxcount="30" value="Add a title" name="title" type="title"><br>
+                     <div class="char-count--headline js-char-placeholder">76</div>
+                     <textarea class="feature--edit__text--edit js-new-headline js-char-counter" data-maxcount="76" name="headline" type="headline">Add a new headline</textarea>
+               </div>
+            </div>
+         </div>
+         <h2 class="story__subheadline">The Facts</h2>
+         <div class="story__summary">
+            <div class="char-count--summary js-char-placeholder">2500</div>
+            <textarea class="input__textarea js-autofit js-new-summary js-char-counter" data-maxcount="2500" name="summary" type="summary">Add some facts</textarea>
+         </div>
+      </li>
+   </ul>
+</form>
+}
+
+
+
+
+

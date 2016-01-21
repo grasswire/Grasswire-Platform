@@ -1,0 +1,18 @@
+@mixin first() {
+    &:first-of-type {
+        @content
+    }
+}
+
+@mixin last() {
+    &:last-of-type {
+        @content
+    }
+}
+
+@mixin placeholder($color) {
+   &::-webkit-input-placeholder { color: $color; }
+   &::-moz-placeholder { color: $color; }
+   &:-ms-input-placeholder { color: $color; }
+   &:-moz-placeholder { color: $color; }
+}

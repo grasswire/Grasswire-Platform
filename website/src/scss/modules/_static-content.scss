@@ -1,0 +1,209 @@
+
+
+.static-container {
+   background: solid get-color(gallery);
+   border: 4px solid get-color(gallery);
+   color: get-color(white);
+   margin-bottom: 20px;
+   margin-top: 45px;
+   padding: 20px;
+
+   h2 {
+      @include font-size(18px);
+      color: get-color(white);
+      margin: 0;
+   }
+
+   p {
+      @include font-size(14px);
+      color: get-color(white);
+      a {
+         color: inherit;
+         text-decoration: underline;
+      }
+   }
+   &__footer {
+      @include font-size(12px);
+      padding-top: 10px;
+   }
+
+}
+
+.footer {
+   &__list {
+      list-style-type: none;
+      margin: 0;
+      margin-top: 20px;
+      padding: 0;
+   }
+   &__list-item {
+      display: inline-block;
+      margin-right: 5px;
+      @include last() {
+         margin-right: 0;
+      }
+      a {
+         color: inherit;
+      }
+   }
+}
+
+.static-page {
+   overflow: auto;
+
+   p {
+      @include font-size(16px);
+      margin-bottom: 20px;
+      @include last() {
+         margin-bottom: 0;
+      }
+   }
+}
+
+.static-wrapper {
+   max-width: 940px;
+   margin: 0 auto;
+}
+
+.static-header {
+   background: transparent url("../images/general-modal-header.jpg") 0 0 repeat-x;
+   height: 160px;
+   margin-top: -1px;
+
+   &__headline {
+      @include get-stack(bold);
+      @include font-size(32px);
+      color: get-color(white);
+      margin: 0;
+      padding: 38px 0 7px 0;
+      text-align: center;
+      text-transform: uppercase;
+      @include media("<small") {
+         @include font-size(28px);
+         padding: 24px 0 7px 0;
+      }
+   }
+   &__sub-headline {
+      @include get-stack(regular);
+      @include font-size(20px);
+      color: get-color(white);
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      @include media("<small") {
+         @include font-size(18px);
+      }
+   }
+}
+
+.content-block {
+   @include container;
+   background: get-color(white);
+   margin-bottom: 15px;
+   padding: 50px;
+
+   a {
+      color: get-color(boston-blue);
+      text-decoration: underline;
+
+   }
+   &__headline {
+      @include font-size(32px);
+      color: get-color(black);
+      margin-bottom: 20px;
+      margin-top: 0;
+   }
+   &__sub-headline {
+      @include font-size(24px);
+      color: get-color(black);
+      margin-bottom: 20px;
+      margin-top: 0;
+   }
+
+   &__list {
+      @include font-size(16px);
+      padding-left: 18px;
+      li {
+         margin-bottom: 10px;
+      }
+   }
+
+   &__figure {
+      float: right;
+      @include media("<small") {
+         display: none;
+      }
+   }
+   &__text {
+      &--submit {
+         float: left;
+         max-width: 45%;
+         @include media("<medium-small") {
+            max-width: 35%;
+         }
+         @include media("<small") {
+            max-width: 100%;
+         }
+      }
+   }
+}
+
+.static-navigation {
+   text-align: center;
+   &__list {
+      list-style-type: none;
+      padding: 0;
+   }
+   &__item {
+      display: inline-block;
+      padding: 15px 30px;
+      @include first() {
+         padding-left: 0;
+      }
+      @include last() {
+         padding-right: 0;
+      }
+      @include media("<medium-small") {
+         padding: 15px;
+      }
+      @include media("<small") {
+         padding: 10px 8px;
+      }
+      @include media("<small-tiny") {
+         display: block;
+         padding: 10px;
+      }
+      a {
+         @include font-size(14px);
+         @include get-stack(bold);
+         color: get-color(dusty-gray);
+         text-transform: uppercase;
+      }
+
+      &--selected {
+         display: inline-block;
+         padding: 15px 30px;
+
+         a {
+            @include get-stack(bold);
+            @include font-size(14px);
+            color: get-color(pelorous);
+            text-transform: uppercase;
+         }
+         @include first() {
+            padding-left: 0;
+         }
+         @include media("<medium-small") {
+            padding: 15px;
+         }
+         @include media("<small") {
+            padding: 10px 8px;
+         }
+         @include media("<small-tiny") {
+            display: block;
+            padding: 10px;
+         }
+
+      }
+   }
+}

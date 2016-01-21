@@ -1,0 +1,19 @@
+.newsroom-bar {
+   @include font-size(18px);
+   background: get-color(white);
+   color: get-color(dusty-gray);
+   margin: 0 auto;
+   padding: 15px 17px;
+   text-align: center;
+   width: 100%;
+
+   @include media("<=small") {
+      @include font-size(15px);
+      padding: 10px 15px;
+   }
+
+   a {
+      color: get-color(pelorous);
+   }
+
+}

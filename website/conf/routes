@@ -1,0 +1,110 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Home page
+
+GET         /                                         controllers.Application.index(modal: Option[String])
+
+GET        /googlee4cd1d0a4edb4af3.html               controllers.Application.googleVerify
+
+GET         /feed                                     controllers.Application.feed(modal: Option[String])
+
+GET         /edit                                     controllers.Application.edit(modal: Option[String], storyId: Option[Long])
+
+GET         /new-story                                controllers.Application.newStory(modal: Option[String])
+
+GET         /api-docs                                 controllers.ApiHelpController.getResources
+
+GET         /api-docs/ajax                            controllers.ApiHelpController.getResource(path = "/ajax")
+
+GET         /admin                                    controllers.AdminController.adminPage
+
+POST        /admin/create_digest                      controllers.AdminController.createDigest
+
+GET         /w/*x                                     controllers.Application.legacyCatchAllRedirect(x)
+
+GET         /about                                    controllers.Application.about()
+
+GET         /live                                     controllers.Application.live()
+
+GET         /healthcheck                              controllers.Application.healthCheck
+
+GET         /login                                    controllers.Application.login
+
+GET         /logout                                   controllers.Application.logout
+
+GET         /javascriptRoutes                         controllers.Application.javascriptRoutes
+
+GET         /ajax/update_email                        controllers.AjaxController.updateEmail(email: String)
+
+GET         /ajax/link_preview                        controllers.AjaxController.linkPreview(url: String)
+
+POST        /ajax/create_link                         controllers.AjaxController.createLink(url: String, canonicalUrl: String, thumbnail: Option[String], title: String, description: String, storyId: Long)
+
+POST        /ajax/create_story                        controllers.AjaxController.createStory
+
+PUT         /ajax/stories/edit                        controllers.AjaxController.editStory(id: Long)
+
+PUT         /ajax/stories/order                       controllers.AjaxController.editStoryOrdering
+
+PUT         /ajax/links/edit                          controllers.AjaxController.editLink(storyId: Long, linkId: Long, thumbnail: Option[String], title: Option[String], description: Option[String], hidden: Option[Boolean])
+
+GET         /ajax/stories/search                      controllers.AjaxController.searchStories(query: String)
+
+GET         /ajax/users/search                        controllers.AjaxController.searchUsers(query: String)
+
+GET         /ajax/digests/list                        controllers.AjaxController.listDigests(offset: Int, limit: Int)
+
+GET         /ajax/stories/hide                        controllers.AjaxController.hideStory(storyId: Long)
+
+GET         /ajax/unarchive_story                     controllers.AjaxController.unarchiveStory(storyId: Long)
+
+GET         /ajax/get_user_profile                    controllers.AjaxController.getProfile(username: String)
+
+GET         /ajax/list_notifications                  controllers.AjaxController.listNotifications(unreadOnly: Boolean ?= true, sinceId: Option[Long])
+
+GET         /ajax/todays_contributors                 controllers.AjaxController.todaysContributors
+
+GET         /ajax/mark_notifications_read             controllers.AjaxController.markNotificationsAsRead(ids : String)
+
+GET         /ajax/admins/admin/                       controllers.AjaxController.makeAdmin(username: String)
+
+GET         /ajax/admins/lockdown                     controllers.AjaxController.lockdown(locked: Boolean)
+
+GET         /ajax/admins/lockdown_status              controllers.AjaxController.lockdownStatus
+
+POST        /ajax/admins/revert_story                 controllers.AdminController.revertStory(storyId: Long, version: Long)
+
+GET         /admin/change_logs                        controllers.AdminController.changeLog(offset: Option[Int], max: Option[Int])
+
+GET         /admin/generate_new_email                 controllers.AdminController.generateEmailDigestPage
+
+GET         /admin/stories/change_logs                controllers.AdminController.storyChangeLogs(id: Long, offset: Option[Int], max: Option[Int])
+
+GET         /admin/users/hellban                      controllers.AdminController.hellban(username: String, ban: Boolean)
+
+GET         /admin/live                               controllers.AdminController.livePage
+
+POST        /admin/live_pages                         controllers.AdminController.createLivePage
+
+GET         /admin/email_digest                       controllers.AdminController.generateEmailDigest(limit: Int)
+
+GET         /admin/users                              controllers.AdminController.usersPage
+
+GET         /welcome                                  controllers.Application.index(modal: Option[String])
+
+GET         /guidelines                               controllers.Application.guidelines
+
+GET         /auth/twitter/edit                        controllers.TwitterAuthController.authenticate(uri = "/edit")
+
+GET         /auth/twitter/add                         controllers.TwitterAuthController.authenticate(uri = "/new-story")
+
+GET         /users/*name                              controllers.Application.userProfile(name)
+
+GET         /story/$id<[0-9]+>/*dasherizedName        controllers.Application.lookupStory(id: Long, dasherizedName)
+
+GET         /swagger-ui/*file                         controllers.Assets.at(path = "/public/swagger-ui", file)
+
+# Map static resources from the /public folder to the /assets URL path
+GET         /assets/*file                             controllers.Assets.at(path="/public", file)

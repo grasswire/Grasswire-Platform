@@ -1,0 +1,15 @@
+#!/bin/bash
+
+pushd website
+
+npm install && bower install
+
+if [ $? -eq 0 ]; then
+    echo "Success! Now run ./run_website to start the project"
+else
+    echo "Failed to install some npm dependencies. Ask for help"
+fi
+
+popd
+
+

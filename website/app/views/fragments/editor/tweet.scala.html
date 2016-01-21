@@ -1,0 +1,28 @@
+@(msg: com.grasswire.common.json_models.TweetLinkJsonModel)(implicit request: Request[Any], session: Option[com.grasswire.common.models.Session])
+
+<div class="mediabox" data-type="tweet">
+   <header class="mediabox__header">
+      <div class="mediabox__avatar">
+         <img class="js-image-checker" src="@msg.tweet.user.profile_image_url_https" alt="@msg.tweet.user.screen_name">
+      </div>
+      <div class="mediabox__userinfo">
+         <div class="mediabox__username">&#64;@(msg.tweet.user.screen_name)</div>
+         <div class="mediabox__provider"><span class="fa fa-twitter accent"></span></div>
+      </div>
+      <time datetime="@{msg.tweet.getCreateDate.getMillis/1000}" class="mediabox__timespan" data-livestamp="@{msg.tweet.getCreateDate.getMillis/1000}"></time>
+   </header>
+   @if(msg.tweet.hasPhoto && !msg.tweet.hasYoutubeVideo) {
+      <div class="mediabox__visual--bigscreen">
+         <img src="@msg.tweet.mediaUrlHttps" alt="@msg.tweet.mediaUrlHttps">
+      </div>
+   }
+   @for(video <- msg.tweet.videoData) {
+      <div class="mediabox__video-container">
+         <iframe class="mediabox__player" height="315" width="560" allowfullscreen frameborder="0" src="@{video.embedUrl}"></iframe>
+      </div>
+   }
+   <blockquote class="mediabox__content" cite="@msg.tweet.user.screen_name">
+      <p class="mediabox__description">@(utils.TwitterParser.parseTweet(msg.tweet).getOrElse("Could not display tweet"))</p>
+      <p class="mediabox__see-more">see original at <a href="@msg.tweet.tweetUrl" target="_blank" title="@msg.tweet.tweetUrl">www.twitter.com</a></p>
+   </blockquote>
+</div>

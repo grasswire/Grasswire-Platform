@@ -1,0 +1,15 @@
+@()(implicit request: Request[Any], session: Option[com.grasswire.common.models.Session])
+
+@admin(signature = "admin") {
+   <header class="content-container">
+      <div class="content-wrapper">
+         <h1>Digest</h1>
+      </div>
+   </header>
+   <main class="content-container">
+      <div class="content-wrapper">
+         <textarea class="js-digest-text input__textarea" rows="20" placeholder="Enter your new digest text..."></textarea>
+         <button class="button js-save-new">Save</button>
+      </div>
+   </main>
+}

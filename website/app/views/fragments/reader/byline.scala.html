@@ -1,0 +1,33 @@
+@(story: com.grasswire.common.json_models.StoryJsonModel)(implicit request: Request[Any], session: Option[com.grasswire.common.models.Session])
+<div class="byline">
+   <div class="byline__content-container">
+      <div class="byline__contributors-container">
+         <p class="byline__text">Contributors </p>
+         <ul class="byline__list">
+            @for((contributors) <- story.contributors) {
+               <li class="byline__item js-profile-hover-parent">
+                  <a href="/users/@contributors.twitterScreenName" title="@contributors.profileImageUrl" class="js-profile-hover"><img class="byline__avatar js-image-checker" src="@contributors.profileImageUrl" alt="@contributors.twitterScreenName"></a>
+                  <div class="hover--invert" style="display: none;">
+                     <div class="profile-block">
+                        <img class="profile-block__avatar js-image-checker" src="@contributors.profileImageUrl" alt="">
+                        <h3 class="profile-block__username">&#64;@contributors.twitterScreenName</h3>
+                        <a href="/users/@contributors.twitterScreenName" title="Profile" class="button">Profile</a>
+                     </div>
+                     <span class="hover--invert__caret fa fa-caret-down"></span>
+                  </div>
+               </li>
+            }
+         </ul>
+      </div>
+      <div class="byline__share-container">
+         <p class="byline__text">Share</p>
+         <ul class="share-links__list js-share-container" data-share-url="https://@request.host@routes.Application.lookupStory(story.id, story.name.replaceAll("[^a-zA-Z0-9]+","-"))" data-share-headline="@story.headline.getOrElse("")">
+            <li class="share-links__item twitter"><a href="#" title="Share on Twitter" class="js-share-popup-twitter"><span class="fa fa-twitter">&nbsp;</span></a></li>
+            <li class="share-links__item reddit"><a href="#" class="js-share-popup-reddit" title="Share on Reddit"><span class="fa fa-reddit-square">&nbsp;</span></a></li>
+            <li class="share-links__item facebook"><a href="#" title="Share on Facebook" class="js-share-popup-facebook"><span class="fa fa-facebook-official">&nbsp;</span></a></li>
+            <li class="share-links__item link"><a href="#" title="Copy the Link" class="js-modal-open js-share-popup-link" data-modal-id="copy-link"><span class="fa fa-link"></span></a></li>
+         </ul>
+      </div>
+   </div>
+</div>
+

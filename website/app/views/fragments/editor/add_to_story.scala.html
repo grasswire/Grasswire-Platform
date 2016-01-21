@@ -1,0 +1,32 @@
+@(story: com.grasswire.common.json_models.StoryJsonModel)(implicit request: Request[Any], session: Option[com.grasswire.common.models.Session])
+
+<div class="error__scrape js-error" style="display: none;">
+   <div class="error__container">
+      <p><span class="fa fa-exclamation-triangle"></span> We couldn't get a preview of that link. Please fill in  the details</p>
+      <p class="dismiss"><a href="#" title="" class="js-dismiss-error">DISMISS</a></p>
+   </div>
+</div>
+
+<div class="story__new">
+   <h2>Add to Story</h2>
+   <div class="js-add-new-success">
+      <input type="text" class="input__add-new-item js-preview-item" placeholder="add a link">
+   </div>
+   <div class="js-add-new-error" style="display: none;">
+      <input type="text" class="input__add-new-item-error js-preview-item js-new-item-url js-new-item-url js-new-item-canonical-url" placeholder="add a link"><br>
+      <div class="story__error">
+         <input type="text" class="input__add-new-item-error js-new-item-title" placeholder="add title">
+         <div class="story__image-container">
+            <img class="story__image js-show-new-current-image" src="@CdnAssets.at("images/default-feature.png")" alt="" data-invalid-image="true">
+            <div class="story__image--edit">
+               <span class="fa fa-picture-o fa-3x photo-icon feature--edit__photo-icon"></span>
+               <input type="text" class="js-show-new-image feature--edit__image-edit js-new-item-image" placeholder="Add a New Image (optional)"  name="url" type="url" required>
+            </div>
+         </div>
+         <textarea class="input__add-new-item-error js-new-item-description" placeholder="add description"></textarea>
+      </div>
+   </div>
+
+</div>
+
+

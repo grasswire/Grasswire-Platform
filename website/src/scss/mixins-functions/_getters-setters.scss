@@ -1,0 +1,33 @@
+@function get-by($key, $map) {
+    @if map-has-key($map, $key) {
+        @return map-get($map, $key);
+    }
+    @else {
+       @each $k, $v in $map {
+         @if ($v == $key) {
+            @return $v;
+         }
+       }
+    }
+
+    @error "Unknown `#{$key}` in `#{$map}` map.";
+    @return null;
+}
+
+@function set-zindex($increment: 1) {
+   @return $current-z-index + $increment;
+}
+
+@function get-value($n) {
+    @return $n / ($n * 0 + 1);
+}
+
+@function get-color($name) {
+   @return get-by($name, $colors);
+}
+
+@mixin get-stack($type) {
+   font: {
+      family: get-by($type, $font-stack);
+   }
+}

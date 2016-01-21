@@ -1,0 +1,49 @@
+@(profile: com.grasswire.common.json_models.UserProfileJsonModel)(implicit request: Request[Any], session: Option[com.grasswire.common.models.Session])
+
+@head = {
+   <title>Profile of @profile.user.twitterScreenName &#124; Grasswire &#124; Your Newsroom</title>
+   <meta name="description" content="Profile of @profile.user.twitterScreenName &#124; Grasswire &#124; Your Newsroom">
+   <meta property="og:title" content="Profile of @profile.user.twitterScreenName &#124; Grasswire | Your Newsroom">
+   <meta property="og:type" content="website">
+   <meta property="og:url" content="https://@request.host">
+   <meta property="og:image" content="https:@CdnAssets.at("images/favicon.png")">
+   <meta property="og:description" content="Grasswire is a collaborative newsroom that anyone can edit and curate">
+   <meta name="twitter:card" content="summary_large_image">
+   <meta name="twitter:site" content="@@grasswire">
+   <meta name="twitter:title" content="Profile of @profile.user.twitterScreenName &#124; Grasswire | Your Newsroom">
+   <meta name="twitter:description" content="Grasswire is a collaborative newsroom that anyone can edit and curate">
+   <meta name="twitter:creator" content="@@grasswire">
+   <meta name="twitter:image" content="https:@CdnAssets.at("images/favicon.png")">
+   <meta name="twitter:url" content="https://@request.host">
+}
+
+@main(signature = "user-profile", head = head) {
+   <main>
+      <div class="static-wrapper">
+         <div class="profile">
+            <div class="profile__image">
+               <img src="@profile.user.profileImageUrl" alt="@profile.user.twitterScreenName">
+            </div>
+            <div class="profile__info">
+               <h2 class="profile__username"><a href="//twitter.com/@profile.user.twitterScreenName" title="@profile.user.twitterScreenName" target="_blank">&#64;@profile.user.twitterScreenName</a></h2>
+               <a href="//twitter.com/@profile.user.twitterScreenName" class="button" title="">Follow on Twitter</a>
+            </div>
+         </div>
+
+         <h3 class="contribution__page-headline">Contributions</h3>
+         @for(contribution <- profile.storyContributions) {
+            <div class="contribution">
+               <div class="contribution__image">
+                  <img class="js-image-checker" src="@contribution.coverPhoto.getOrElse(CdnAssets.at("images/default-feature.png"))" alt="">
+               </div>
+               <div class="contribution__content">
+                  <a class="contribution__tag" href="@routes.Application.lookupStory(contribution.id, contribution.name.replaceAll("[^a-zA-Z0-9]+","-"))">@contribution.name</a>
+                  <h1 class="contribution__headline">@contribution.headline.getOrElse("")</h1>
+               </div>
+            </div>
+         }
+
+      </div>
+   </main>
+
+}

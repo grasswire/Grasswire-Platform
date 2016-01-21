@@ -1,0 +1,26 @@
+@import com.grasswire.common.json_models._
+@()(implicit request: Request[Any], session: Option[com.grasswire.common.models.Session])
+
+<div class="modal js-modal" data-modal-content-id="signup_success" data-trigger-on-mobile="true">
+   <div class="modal__masthead">
+      <h2>Welcome to Grasswire, @request.session.get("name")</h2>
+      <h3>Last Step and You're In</h3>
+      <a href="#" class="js-modal-close modal__closer"><span class="fa fa-close js-close-modal"></span></a>
+   </div>
+   <div class="modal--login__content">
+      <div class="js-email-capture-content">
+         <form method="get" class="js-capture-email-form">
+            <p>
+               <input type="email" name="signupEmail" class="input__text--full js-signup-email" value="" placeholder="email">
+               <small>(we protect your privacy)</small><br><br>
+            </p>
+            <p>
+               <button data-title="Signup Email Capture" type="submit" class="button js-submit-email">Continue</button>
+            </p>
+         </form>
+      </div>
+      <div class="js-email-capture-success" style="display: none;">
+         <h1>Thanks, @request.session.get("name")</h1>
+      </div>
+   </div>
+</div>

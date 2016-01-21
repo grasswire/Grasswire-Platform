@@ -1,0 +1,684 @@
+@import com.grasswire.common.json_models.EmailDigestTemplateModel
+@(stories: List[EmailDigestTemplateModel])(implicit request: Request[Any])
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional //EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" style="margin-top: 0px !important; padding-top: 0px !important">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Grasswire Email Digest</title>
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,400italic,500,500italic|Roboto+Condensed:400,700,400italic,300italic,300,700italic' rel='stylesheet' type='text/css'>
+</head>
+<body id="email-296366" style="background: #DDDDDD; color: #444444 !important; font-family: Roboto, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; font-style: normal; line-height: 20px; margin: 0px 0 0 0px; padding: 0px 0 0; text-shadow: none" bgcolor="#DDDDDD">
+
+<style type="text/css">
+    html,
+    body {
+        margin-top: 0px !important;
+        padding-top: 0px !important;
+    }
+
+    body {
+        background-color: #DDDDDD;
+        margin-top: 0px !important;
+        padding-top: 0px !important;
+        font-family: sans-serif;
+    }
+
+    table {
+        margin-top: 0px !important;
+        padding-top: 0px !important;
+    }
+    </style>
+    <style type="text/css">
+    a img {
+        color: #000001 !important;
+    }
+
+    .wysiwyg-text-align-right {
+        text-align: right;
+    }
+
+    .wysiwyg-text-align-center {
+        text-align: center;
+    }
+
+    .wysiwyg-text-align-left {
+        text-align: left;
+    }
+
+    .wysiwyg-text-align-justify {
+        text-align: justify;
+    }
+
+    body {
+        text-shadow: none;
+        padding-top: 0;
+        padding-right: 0;
+        padding-bottom: 0;
+        padding-left: 0;
+        margin-top: 0;
+        margin-right: 0;
+        margin-bottom: 0;
+        margin-left: 0;
+        color: #444444!important;
+        font-style: normal;
+        font-family: Roboto, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        font-size: 14px;
+        line-height: 20px;
+    }
+
+    h1,
+    #email-296366 h1 {
+        text-shadow: none;
+        padding-top: 0;
+        padding-right: 0;
+        padding-bottom: 0;
+        padding-left: 0;
+        margin-top: 0;
+        margin-right: 0;
+        margin-bottom: 0;
+        margin-left: 0;
+        color: #3E3E3E!important;
+        font-weight: 700;
+        font-style: normal;
+        font-family: 'Roboto Condensed', 'Helvetica Neue Condensed', Helvetica, 'Arial Narrow', Arial, sans-serif;;
+        font-size: 24px;
+        line-height: 28px;
+    }
+
+    h2,
+    #email-296366 h2 {
+        text-shadow: none;
+        padding-top: 0;
+        padding-right: 0;
+        padding-bottom: 0;
+        padding-left: 0;
+        margin-top: 0;
+        margin-right: 0;
+        margin-bottom: 0;
+        margin-left: 0;
+        color: #000000!important;
+        font-weight: 400;
+        font-style: normal;
+        font-family: Arial;
+        font-size: 24px;
+        line-height: 32px;
+    }
+
+    h3,
+    #email-296366 h3 {
+        text-shadow: none;
+        padding-top: 0;
+        padding-right: 0;
+        padding-bottom: 0;
+        padding-left: 0;
+        margin-top: 0;
+        margin-right: 0;
+        margin-bottom: 0;
+        margin-left: 0;
+        color: #444444!important;
+        font-weight: 400;
+        font-style: normal;
+        font-family: Roboto, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        font-size: 14px;
+        line-height: 16px;
+    }
+
+    p,
+    #email-296366 p {
+        text-shadow: none;
+        padding-top: 0;
+        padding-right: 0;
+        padding-bottom: 0;
+        padding-left: 0;
+        margin-top: 0;
+        margin-right: 0;
+        margin-bottom: 0;
+        margin-left: 0;
+        color: #444444!important;
+        font-style: normal;
+        font-family: Roboto, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        font-size: 14px;
+        line-height: 20px;
+    }
+
+    a,
+    #email-296366 a {
+        text-shadow: none;
+        padding-top: 0;
+        padding-right: 0;
+        padding-bottom: 0;
+        padding-left: 0;
+        margin-top: 0;
+        margin-right: 0;
+        margin-bottom: 0;
+        margin-left: 0;
+        color: #3A919E!important;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    p.foote-text,
+    #email-296366 p.foote-text {
+        text-shadow: none;
+        padding-top: 0;
+        padding-right: 0;
+        padding-bottom: 0;
+        padding-left: 0;
+        margin-top: 0;
+        margin-right: 0;
+        margin-bottom: 0;
+        margin-left: 0;
+        color: #999999!important;
+        font-family: Roboto, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        font-size: 11px;
+        line-height: 13px;
+    }
+
+    a.footer-links,
+    #email-296366 a.footer-links {
+        text-shadow: none;
+        padding-top: 0;
+        padding-right: 0;
+        padding-bottom: 0;
+        padding-left: 0;
+        margin-top: 0;
+        margin-right: 0;
+        margin-bottom: 0;
+        margin-left: 0;
+        color: #999999!important;
+    }
+
+    .h1_color_span_wrapper {
+        color: #3E3E3E;
+    }
+
+    .h2_color_span_wrapper {
+        color: #000000;
+    }
+
+    .h3_color_span_wrapper {
+        color: #444444;
+    }
+
+    .p_color_span_wrapper {
+        color: #444444;
+    }
+
+    .a_color_span_wrapper {
+        color: #3A919E;
+    }
+
+    .foote-text_color_span_wrapper {
+        color: #999999;
+    }
+
+    .footer-links_color_span_wrapper {
+        color: #999999;
+    }
+
+    .mi-all {
+        display: block;
+    }
+
+    .mi-desktop {
+        display: block;
+    }
+
+    .mi-mobile {
+        display: none;
+        font-size: 0;
+        max-height: 0;
+        line-height: 0;
+        padding: 0;
+        float: left;
+        overflow: hidden;
+        mso-hide: all;
+        /* hide elements in Outlook 2007-2013 */
+    }
+</style>
+<style type="text/css">
+    div,
+    p,
+    a,
+    li,
+    td {
+        -webkit-text-size-adjust: none;
+    }
+</style>
+<style type="text/css">
+    body {
+        margin-top: 0px !important;
+        padding-top: 0px !important;
+    }
+
+    body {
+        background-color: #DDDDDD;
+        margin-top: 0px !important;
+        padding-top: 0px !important;
+        font-family: sans-serif;
+    }
+
+    body {
+        text-shadow: none;
+        padding-top: 0;
+        padding-right: 0;
+        padding-bottom: 0;
+        padding-left: 0;
+        margin-top: 0;
+        margin-right: 0;
+        margin-bottom: 0;
+        margin-left: 0;
+        color: #444444 !important;
+        font-style: normal;
+        font-family: Roboto, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        font-size: 14px;
+        line-height: 20px;
+    }
+</style>
+
+    <table align="center" cellpadding="0" cellspacing="0" width="100%" style="background: #DDDDDD; border-collapse: collapse; border-spacing: 0; border: 0; margin: 0px 0 0; padding: 0px 0 0" bgcolor="#DDDDDD">
+        <tr align="center" style="border-collapse: collapse; border-spacing: 0; border: 0">
+            <td align="center" valign="top" style="border-collapse: collapse; border-spacing: 0; border: 0">
+                <div class="mi-all" style="display: block">
+                    <table width="615" class="mi-all" align="center" cellspacing="0" cellpadding="0" border="0" style="border-collapse: collapse; border-spacing: 0; border: 0; display: block; margin: 0px 0 0; min-width: 615px; padding: 0px 0 0">
+                        <tbody>
+                            <tr align="left" style="border-collapse: collapse; border-spacing: 0; border: 0">
+                                <td>
+                                    <table cellspacing="0" cellpadding="0" border="0" style="border-collapse: collapse; border-spacing: 0; border: 0; margin-top: 0px !important; min-width: 615px; padding-top: 0px !important">
+                                        <tbody>
+                                            <tr style="border-collapse: collapse; border-spacing: 0; border: 0">
+                                                <td align="left" valign="top">
+                                                    <table align="center" cellspacing="0" cellpadding="0" border="0" style="border-collapse: collapse; border-spacing: 0; border: 0; margin: 0px 0 0; min-width: 615px; padding: 0px 0 0">
+                                                        <tbody>
+                                                            <tr align="left" style="border-collapse: collapse; border-spacing: 0; border: 0">
+                                                                <td>
+                                                                    <table cellspacing="0" cellpadding="0" border="0" style="border-collapse: collapse; border-spacing: 0; border: 0; margin-top: 0px !important; min-width: 615px; padding-top: 0px !important">
+                                                                        <tbody>
+                                                                            <tr style="border-collapse: collapse; border-spacing: 0; border: 0">
+                                                                                <td width="615" align="left" valign="top" height="20"></td>
+                                                                            </tr>
+                                                                            {{MESSAGE}}
+                                                                            <tr style="border-collapse: collapse; border-spacing: 0; border: 0">
+                                                                                <td width="615" align="left" valign="top" height="20"></td>
+                                                                            </tr>
+                                                                        </tbody>
+                                                                    </table>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr align="left" style="border-collapse: collapse; border-spacing: 0; border: 0">
+                                <td>
+                                    <table cellspacing="0" cellpadding="0" border="0" style="border-collapse: collapse; border-spacing: 0; border: 0; margin-top: 0px !important; min-width: 615px; padding-top: 0px !important">
+                                        <tbody>
+                                            <tr style="border-collapse: collapse; border-spacing: 0; border: 0">
+                                                <td align="left" valign="top">
+                                                    <table align="center" cellspacing="0" cellpadding="0" border="0" style="border-collapse: collapse; border-spacing: 0; border: 0; margin: 0px 0 0; min-width: 615px; padding: 0px 0 0">
+                                                        <tbody>
+                                                            <tr align="left" style="border-collapse: collapse; border-spacing: 0; border: 0">
+                                                                <td>
+                                                                    <table cellspacing="0" cellpadding="0" border="0" style="border-collapse: collapse; border-spacing: 0; border: 0; margin-top: 0px !important; min-width: 615px; padding-top: 0px !important">
+                                                                        <tbody>
+                                                                            <tr style="border-collapse: collapse; border-spacing: 0; border: 0">
+                                                                                <td align="left" valign="top" style="line-height: 0px; mso-line-height-rule: exactly"><img src="https://gallery.mailchimp.com/3ad2895e9613627e104c66f13/images/fdbec9ba-f182-4578-8586-71efa8a49282.jpg" style="border: 0; display: block; line-height: 0px" /></td>
+                                                                            </tr>
+                                                                        </tbody>
+                                                                    </table>
+                                                                </td>
+                                                            </tr>
+                                                            <tr align="left" style="border-collapse: collapse; border-spacing: 0; border: 0">
+                                                                <td>
+                                                                    <table cellspacing="0" cellpadding="0" border="0" style="border-collapse: collapse; border-spacing: 0; border: 0; margin-top: 0px !important; min-width: 615px; padding-top: 0px !important">
+                                                                        <tbody>
+                                                                            <tr style="border-collapse: collapse; border-spacing: 0; border: 0">
+                                                                                <td width="155" align="left" valign="top" style="background: #44A7B7" height="24" bgcolor="#44A7B7"><img height="24" src="https://gallery.mailchimp.com/3ad2895e9613627e104c66f13/images/9473aa82-44cf-4eb6-b0fc-fdb9f765d7df.gif" style="border: 0; color: #FFFFFF !important; display: block; line-height: 0px; opacity: 0" width="155" /></td>
+                                                                                <td align="left" valign="top" style="line-height: 0px; mso-line-height-rule: exactly">
+                                                                                    <a href="https://grasswire.com?src=email&id=*|CAMPAIGN_UID|*" target="_blank" style="border: none; color: #3A919E !important; display: block; font-size: 10px; font-weight: 700;  margin-top:0; padding-top:0; margin-right:0; padding-right:0; margin-bottom:0; padding-bottom:0; margin-left:0; padding-left:0;  text-decoration: none; text-shadow: none"><img alt="GRASSWIRE | Email Digest" src="https://gallery.mailchimp.com/3ad2895e9613627e104c66f13/images/1d3e8d1c-b271-4b39-a110-35cc278d557b.jpg" style="border: 0; color: #000001 !important; display: block; line-height: 0px" /></a>
+                                                                                </td>
+                                                                                <td width="178" align="left" valign="top" style="background: #44A7B7" height="24" bgcolor="#44A7B7"><img height="24" src="https://gallery.mailchimp.com/3ad2895e9613627e104c66f13/images/9473aa82-44cf-4eb6-b0fc-fdb9f765d7df.gif" style="border: 0; color: #FFFFFF !important; display: block; line-height: 0px; opacity: 0" width="178" /></td>
+                                                                            </tr>
+                                                                        </tbody>
+                                                                    </table>
+                                                                </td>
+                                                            </tr>
+                                                            <tr align="left" style="background: #44A7B7; border-collapse: collapse; border-spacing: 0; border: 0" bgcolor="#44A7B7">
+                                                                <td>
+                                                                    <table cellspacing="0" cellpadding="0" border="0" style="border-collapse: collapse; border-spacing: 0; border: 0; margin-top: 0px !important; min-width: 615px; padding-top: 0px !important">
+                                                                        <tbody>
+                                                                            <tr style="border-collapse: collapse; border-spacing: 0; border: 0">
+                                                                                <td width="615" align="left" valign="top" style="background: #44A7B7" height="20" bgcolor="#44A7B7"><img height="20" src="https://gallery.mailchimp.com/3ad2895e9613627e104c66f13/images/9473aa82-44cf-4eb6-b0fc-fdb9f765d7df.gif" style="border: 0; color: #FFFFFF !important; display: block; line-height: 0px; opacity: 0" width="615" /></td>
+                                                                            </tr>
+                                                                        </tbody>
+                                                                    </table>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+
+
+                           @for(story <- stories.sortBy(_.position)) {
+
+                            <!-- HEADER IMAGE START -->
+                            <tr align="left" style="border-collapse: collapse; border-spacing: 0; border: 0">
+                                <td>
+                                    <table cellspacing="0" cellpadding="0" border="0" style="border-collapse: collapse; border-spacing: 0; border: 0; margin-top: 0px !important; min-width: 615px; padding-top: 0px !important">
+                                        <tbody>
+                                            <tr style="border-collapse: collapse; border-spacing: 0; border: 0">
+                                                <td align="left" valign="top" style="line-height: 0px; mso-line-height-rule: exactly">
+                                                    <a href="https://@request.host@routes.Application.lookupStory(story.story.id, story.story.name.replaceAll("[^a-zA-Z0-9]+","-"))?src=email&id=*|CAMPAIGN_UID|*" target="_blank" style="border: none; color: #3A919E !important; display: block; font-size: 10px; font-weight: 700;  margin-top:0; padding-top:0; margin-right:0; padding-right:0; margin-bottom:0; padding-bottom:0; margin-left:0; padding-left:0;  text-decoration: none; text-shadow: none"><img alt="@story.story.name" src="{{IMAGE_PATH}}-@story.position" style="border: 0; color: #000001 !important; display: block; line-height: 0px" /></a>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                            <!-- HEADER IMAGE FINISH -->
+                            <tr align="left" style="background: #EEEEEE; border-collapse: collapse; border-spacing: 0; border: 0" bgcolor="#EEEEEE">
+                                <td>
+                                    <table cellspacing="0" cellpadding="0" border="0" style="border-collapse: collapse; border-spacing: 0; border: 0; margin-top: 0px !important; min-width: 615px; padding-top: 0px !important">
+                                        <tbody>
+                                            <tr style="border-collapse: collapse; border-spacing: 0; border: 0">
+                                                <td width="615" align="left" valign="top" style="background: #EEEEEE" height="23" bgcolor="#EEEEEE"><img height="23" src="https://gallery.mailchimp.com/3ad2895e9613627e104c66f13/images/9473aa82-44cf-4eb6-b0fc-fdb9f765d7df.gif" style="border: 0; display: block; line-height: 0px; opacity: 0" width="615" /></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr align="left" style="border-collapse: collapse; border-spacing: 0; border: 0">
+                                <td>
+                                    <table cellspacing="0" cellpadding="0" border="0" style="border-collapse: collapse; border-spacing: 0; border: 0; margin-top: 0px !important; min-width: 615px; padding-top: 0px !important">
+                                        <tbody>
+                                            <tr style="border-collapse: collapse; border-spacing: 0; border: 0">
+                                                <td width="72" align="left" valign="top" style="background: #EEEEEE" height="235" bgcolor="#EEEEEE"></td>
+                                                <td align="left" valign="top">
+                                                    <table align="center" cellspacing="0" cellpadding="0" border="0" style="border-collapse: collapse; border-spacing: 0; border: 0; margin: 0px 0 0; min-width: 468px; padding: 0px 0 0">
+                                                        <tbody>
+
+                                                           <!-- TITLE TEXT START -->
+                                                            <tr align="left" style="background: #EEEEEE; border-collapse: collapse; border-spacing: 0; border: 0" bgcolor="#EEEEEE">
+                                                                <td>
+                                                                    <table cellspacing="0" cellpadding="0" border="0" style="border-collapse: collapse; border-spacing: 0; border: 0; margin-top: 0px !important; min-width: 468px; padding-top: 0px !important">
+                                                                        <tbody>
+                                                                            <tr style="border-collapse: collapse; border-spacing: 0; border: 0">
+                                                                                <td width="468" align="left" valign="top" style="background: #EEEEEE" height="30" bgcolor="#EEEEEE">
+                                                                                    <h1 style="color: #3E3E3E !important; font-family: 'Roboto Condensed', 'Helvetica Neue Condensed', Helvetica, 'Arial Narrow', Arial, sans-serif; font-size: 24px; font-style: normal; font-weight: 700; line-height: 28px;  margin-top:0; padding-top:0; margin-right:0; padding-right:0; margin-bottom:0; padding-bottom:0; margin-left:0; padding-left:0;  text-shadow: none"><span class="h1_color_span_wrapper" style="color: #3E3E3E">@story.story.headline</span></h1></td>
+                                                                            </tr>
+                                                                        </tbody>
+                                                                    </table>
+                                                                </td>
+                                                            </tr>
+                                                            <!-- TITLE TEXT FINISH -->
+
+                                                            <tr align="left" style="background: #EEEEEE; border-collapse: collapse; border-spacing: 0; border: 0" bgcolor="#EEEEEE">
+                                                                <td>
+                                                                    <table cellspacing="0" cellpadding="0" border="0" style="border-collapse: collapse; border-spacing: 0; border: 0; margin-top: 0px !important; min-width: 468px; padding-top: 0px !important">
+                                                                        <tbody>
+                                                                            <tr style="border-collapse: collapse; border-spacing: 0; border: 0">
+                                                                                <td width="468" align="left" valign="top" style="background: #EEEEEE" height="27" bgcolor="#EEEEEE"><img height="27" src="https://gallery.mailchimp.com/3ad2895e9613627e104c66f13/images/9473aa82-44cf-4eb6-b0fc-fdb9f765d7df.gif" style="border: 0; display: block; line-height: 0px; opacity: 0" width="468" /></td>
+                                                                            </tr>
+                                                                        </tbody>
+                                                                    </table>
+                                                                </td>
+                                                            </tr>
+
+                                                            <!-- THE FACTS START -->
+                                                            <tr align="left" style="background: #EEEEEE; border-collapse: collapse; border-spacing: 0; border: 0" bgcolor="#EEEEEE">
+                                                                <td>
+                                                                    <table cellspacing="0" cellpadding="0" border="0" style="border-collapse: collapse; border-spacing: 0; border: 0; margin-top: 0px !important; min-width: 468px; padding-top: 0px !important">
+                                                                        <tbody>
+                                                                            <tr style="border-collapse: collapse; border-spacing: 0; border: 0">
+                                                                                <td width="468" align="left" valign="middle" style="background: #EEEEEE" height="29" bgcolor="#EEEEEE">
+                                                                                    <div style="height: 28px; max-height: 28px; max-width: 467px; overflow: hidden; width: 467px">
+                                                                                        <h3 style="color: #444444 !important; font-family: Roboto, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; font-style: normal; font-weight: 400; line-height: 16px;  margin-top:0; padding-top:0; margin-right:0; padding-right:0; margin-bottom:0; padding-bottom:0; margin-left:0; padding-left:0;  text-shadow: none">The Facts</h3></div>
+                                                                                </td>
+                                                                            </tr>
+                                                                        </tbody>
+                                                                    </table>
+                                                                </td>
+                                                            </tr>
+                                                            <!-- THE FACTS FINISH -->
+
+                                                            @story.story.summary match {
+                                                               case Some(summary) => {
+                                                                  <!-- BODY COPY START -->
+                                                                  <tr align="left" style="background: #FFFFFF; border-collapse: collapse; border-spacing: 0; border: 0" bgcolor="#FFFFFF">
+                                                                      <td>
+                                                                          <table cellspacing="0" cellpadding="0" border="0" style="border-collapse: collapse; border-spacing: 0; border: 0; margin-top: 0px !important; min-width: 468px; padding-top: 0px !important">
+                                                                              <tbody>
+                                                                                  <tr style="border-collapse: collapse; border-spacing: 0; border: 0">
+                                                                                      <td width="468" align="left" valign="top" style="background: #FFFFFF; padding-left: 20px; padding-right: 20px; padding-top: 18px;padding-bottom: 18px;" height="30" bgcolor="#FFFFFF">
+                                                                                          <p style="color: #444444 !important; font-family: Roboto, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; font-style: normal; line-height: 20px;  margin-top:0; padding-top:0; margin-right:0; padding-right:0; margin-bottom:0; padding-bottom:0; margin-left:0; padding-left:0;  text-shadow: none"><span class="p_color_span_wrapper" style="color: #444444">@Html(summary.replaceAll("\n", "<br>"))</span></p>
+                                                                                      </td>
+                                                                                  </tr>
+                                                                              </tbody>
+                                                                          </table>
+                                                                      </td>
+                                                                  </tr>
+                                                                  <!-- BODY COPY FINISH -->
+                                                               }
+                                                               case _ => {}
+                                                            }
+                                                            <tr align="left" style="background: #EEEEEE; border-collapse: collapse; border-spacing: 0; border: 0" bgcolor="#EEEEEE">
+                                                                <td>
+                                                                    <table cellspacing="0" cellpadding="0" border="0" style="border-collapse: collapse; border-spacing: 0; border: 0; margin-top: 0px !important; min-width: 468px; padding-top: 0px !important">
+                                                                        <tbody>
+                                                                            <tr style="border-collapse: collapse; border-spacing: 0; border: 0">
+                                                                                <td width="468" align="left" valign="top" style="background: #EEEEEE" height="29" bgcolor="#EEEEEE"><img height="29" src="https://gallery.mailchimp.com/3ad2895e9613627e104c66f13/images/9473aa82-44cf-4eb6-b0fc-fdb9f765d7df.gif" style="border: 0; display: block; line-height: 0px; opacity: 0" width="468" /></td>
+                                                                            </tr>
+                                                                        </tbody>
+                                                                    </table>
+                                                                </td>
+                                                            </tr>
+                                                            <!-- READ MORE LINK START -->
+                                                            <tr align="left" style="background: #EEEEEE; border-collapse: collapse; border-spacing: 0; border: 0" bgcolor="#EEEEEE">
+                                                                <td>
+                                                                    <table cellspacing="0" cellpadding="0" border="0" style="border-collapse: collapse; border-spacing: 0; border: 0; margin-top: 0px !important; min-width: 468px; padding-top: 0px !important">
+                                                                        <tbody>
+                                                                            <tr style="border-collapse: collapse; border-spacing: 0; border: 0">
+                                                                                <td width="468" align="left" valign="middle" style="background: #EEEEEE" height="28" bgcolor="#EEEEEE">
+                                                                                    <div style="height: 27px; max-height: 27px; max-width: 467px; overflow: hidden; width: 467px">
+                                                                                        <p style="color: #444444 !important; font-family: Roboto, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; font-style: normal; line-height: 20px;  margin-top:0; padding-top:0; margin-right:0; padding-right:0; margin-bottom:0; padding-bottom:0; margin-left:0; padding-left:0;  text-align: center; text-shadow: none" align="center"><span class="p_color_span_wrapper" style="color: #444444"><a href="https://@request.host@routes.Application.lookupStory(story.story.id, story.story.name.replaceAll("[^a-zA-Z0-9]+","-"))?src=email&id=*|CAMPAIGN_UID|*" target="_blank" style="color: #3A919E !important; font-weight: 700;  margin-top:0; padding-top:0; margin-right:0; padding-right:0; margin-bottom:0; padding-bottom:0; margin-left:0; padding-left:0;  text-decoration: underline; text-shadow: none"><span class="a_color_span_wrapper" style="color: #3A919E">Read more about @story.story.name</span></a>
+                                                                                            </span>
+                                                                                        </p>
+                                                                                    </div>
+                                                                                </td>
+                                                                            </tr>
+                                                                        </tbody>
+                                                                    </table>
+                                                                </td>
+                                                            </tr>
+                                                            <!-- READ MORE LINK FINISH -->
+                                                            <tr align="left" style="background: #EEEEEE; border-collapse: collapse; border-spacing: 0; border: 0" bgcolor="#EEEEEE">
+                                                                <td>
+                                                                    <table cellspacing="0" cellpadding="0" border="0" style="border-collapse: collapse; border-spacing: 0; border: 0; margin-top: 0px !important; min-width: 468px; padding-top: 0px !important">
+                                                                        <tbody>
+                                                                            <tr style="border-collapse: collapse; border-spacing: 0; border: 0">
+                                                                                <td width="468" align="left" valign="top" style="background: #EEEEEE" height="29" bgcolor="#EEEEEE"><img height="29" src="https://gallery.mailchimp.com/3ad2895e9613627e104c66f13/images/9473aa82-44cf-4eb6-b0fc-fdb9f765d7df.gif" style="border: 0; display: block; line-height: 0px; opacity: 0" width="468" /></td>
+                                                                            </tr>
+                                                                        </tbody>
+                                                                    </table>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </td>
+                                                <td width="75" align="left" valign="top" style="background: #EEEEEE" height="235" bgcolor="#EEEEEE"></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                            }
+
+                            <tr align="left" style="background: #EEEEEE; border-collapse: collapse; border-spacing: 0; border: 0" bgcolor="#EEEEEE">
+                                <td>
+                                    <table cellspacing="0" cellpadding="0" border="0" style="border-collapse: collapse; border-spacing: 0; border: 0; margin-top: 0px !important; min-width: 615px; padding-top: 0px !important">
+                                        <tbody>
+                                            <tr style="border-collapse: collapse; border-spacing: 0; border: 0">
+                                                <td width="615" align="left" valign="top" style="background: #EEEEEE" height="36" bgcolor="#EEEEEE"><img height="36" src="https://gallery.mailchimp.com/3ad2895e9613627e104c66f13/images/9473aa82-44cf-4eb6-b0fc-fdb9f765d7df.gif" style="border: 0; display: block; line-height: 0px; opacity: 0" width="615" /></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr align="left" style="border-collapse: collapse; border-spacing: 0; border: 0">
+                                <td>
+                                    <table cellspacing="0" cellpadding="0" border="0" style="border-collapse: collapse; border-spacing: 0; border: 0; margin-top: 0px !important; min-width: 615px; padding-top: 0px !important">
+                                        <tbody>
+                                            <tr style="border-collapse: collapse; border-spacing: 0; border: 0">
+                                                <td width="129" align="left" valign="top" style="background: #EEEEEE" height="114" bgcolor="#EEEEEE"><img height="114" src="https://gallery.mailchimp.com/3ad2895e9613627e104c66f13/images/9473aa82-44cf-4eb6-b0fc-fdb9f765d7df.gif" style="border: 0; display: block; line-height: 0px; opacity: 0" width="129" /></td>
+                                                <td align="left" valign="top">
+                                                    <table align="center" cellspacing="0" cellpadding="0" border="0" style="border-collapse: collapse; border-spacing: 0; border: 0; margin: 0px 0 0; min-width: 357px; padding: 0px 0 0">
+                                                        <tbody>
+                                                            <tr align="left" style="border-collapse: collapse; border-spacing: 0; border: 0">
+                                                                <td>
+                                                                    <table cellspacing="0" cellpadding="0" border="0" style="border-collapse: collapse; border-spacing: 0; border: 0; margin-top: 0px !important; min-width: 357px; padding-top: 0px !important">
+                                                                        <tbody>
+                                                                            <tr style="border-collapse: collapse; border-spacing: 0; border: 0">
+                                                                                <td width="71" align="left" valign="top" style="background: #EEEEEE" height="32" bgcolor="#EEEEEE"><img height="32" src="https://gallery.mailchimp.com/3ad2895e9613627e104c66f13/images/9473aa82-44cf-4eb6-b0fc-fdb9f765d7df.gif" style="border: 0; display: block; line-height: 0px; opacity: 0" width="71" /></td>
+                                                                                <!--<td align="left" bgcolor="#EEEEEE" valign="top" style="line-height: 0px; mso-line-height-rule: exactly">
+                                                                                    <a href="http://grasswire.com" target="_blank" style="border: none; color: #3A919E !important; display: block; font-size: 10px; font-weight: 700;  margin-top:0; padding-top:0; margin-right:0; padding-right:0; margin-bottom:0; padding-bottom:0; margin-left:0; padding-left:0;  text-decoration: none; text-shadow: none"><img alt="Download on the App Store" src="https://gallery.mailchimp.com/3ad2895e9613627e104c66f13/images/543b7816-d7d6-4edc-a98b-9b453bf4de88.jpg" style="border: 0; color: #000001 !important; display: block; line-height: 0px" /></a>
+                                                                                </td>-->
+                                                                                <td width="32" align="left" valign="top" style="background: #EEEEEE" height="32" bgcolor="#EEEEEE"><img height="32" src="https://gallery.mailchimp.com/3ad2895e9613627e104c66f13/images/9473aa82-44cf-4eb6-b0fc-fdb9f765d7df.gif" style="border: 0; display: block; line-height: 0px; opacity: 0" width="32" /></td>
+                                                                                <td align="left" valign="top" style="line-height: 0px; mso-line-height-rule: exactly" bgcolor="#EEEEEE">
+                                                                                    <a href="http://facebook.com/grasswire" target="_blank" style="border: none; color: #3A919E !important; display: block; font-size: 10px; font-weight: 700;  margin-top:0; padding-top:0; margin-right:0; padding-right:0; margin-bottom:0; padding-bottom:0; margin-left:0; padding-left:0;  text-decoration: none; text-shadow: none"><img alt="Like us on Facebook" src="https://gallery.mailchimp.com/3ad2895e9613627e104c66f13/images/02419596-9ed9-4339-8233-72381151a8ce.jpg" style="border: 0; color: #000001 !important; display: block; line-height: 0px" /></a>
+                                                                                </td>
+                                                                                <td width="27" align="left" valign="top" style="background: #EEEEEE" height="32" bgcolor="#EEEEEE"><img height="32" src="https://gallery.mailchimp.com/3ad2895e9613627e104c66f13/images/9473aa82-44cf-4eb6-b0fc-fdb9f765d7df.gif" style="border: 0; display: block; line-height: 0px; opacity: 0" width="27" /></td>
+                                                                                <td align="left" valign="top" style="line-height: 0px; mso-line-height-rule: exactly" bgcolor="#EEEEEE">
+                                                                                    <a href="http://twitter.com/grasswire" target="_blank" style="border: none; color: #3A919E !important; display: block; font-size: 10px; font-weight: 700;  margin-top:0; padding-top:0; margin-right:0; padding-right:0; margin-bottom:0; padding-bottom:0; margin-left:0; padding-left:0;  text-decoration: none; text-shadow: none"><img alt="Follow us on Twitter" src="https://gallery.mailchimp.com/3ad2895e9613627e104c66f13/images/ac17bcb4-7d5b-4071-afaa-b3e2f8db0d4c.jpg" style="border: 0; color: #000001 !important; display: block; line-height: 0px" /></a>
+                                                                                </td>
+                                                                                <td width="68" align="left" valign="top" style="background: #EEEEEE" height="32" bgcolor="#EEEEEE"><img height="32" src="https://gallery.mailchimp.com/3ad2895e9613627e104c66f13/images/9473aa82-44cf-4eb6-b0fc-fdb9f765d7df.gif" style="border: 0; display: block; line-height: 0px; opacity: 0" width="68" /></td>
+                                                                            </tr>
+                                                                        </tbody>
+                                                                    </table>
+                                                                </td>
+                                                            </tr>
+                                                            <tr align="left" style="background: #EEEEEE; border-collapse: collapse; border-spacing: 0; border: 0" bgcolor="#EEEEEE">
+                                                                <td>
+                                                                    <table cellspacing="0" cellpadding="0" border="0" style="border-collapse: collapse; border-spacing: 0; border: 0; margin-top: 0px !important; min-width: 357px; padding-top: 0px !important">
+                                                                        <tbody>
+                                                                            <tr style="border-collapse: collapse; border-spacing: 0; border: 0">
+                                                                                <td width="357" align="left" valign="top" style="background: #EEEEEE" height="19" bgcolor="#EEEEEE"><img height="19" src="https://gallery.mailchimp.com/3ad2895e9613627e104c66f13/images/9473aa82-44cf-4eb6-b0fc-fdb9f765d7df.gif" style="border: 0; display: block; line-height: 0px; opacity: 0" width="357" /></td>
+                                                                            </tr>
+                                                                        </tbody>
+                                                                    </table>
+                                                                </td>
+                                                            </tr>
+                                                            <tr align="left" style="background: #EEEEEE; border-collapse: collapse; border-spacing: 0; border: 0" bgcolor="#EEEEEE">
+                                                                <td>
+                                                                    <table cellspacing="0" cellpadding="0" border="0" style="border-collapse: collapse; border-spacing: 0; border: 0; margin-top: 0px !important; min-width: 357px; padding-top: 0px !important">
+                                                                        <tbody>
+                                                                            <tr style="border-collapse: collapse; border-spacing: 0; border: 0">
+                                                                                <td width="357" align="left" valign="middle" style="background: #EEEEEE" height="36" bgcolor="#EEEEEE">
+                                                                                    <div style="height: 35px; max-height: 35px; max-width: 356px; overflow: hidden; width: 356px">
+                                                                                        <p class="foote-text" style="color: #999999 !important; font-family: Roboto, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 11px; font-style: normal; line-height: 13px;  margin-top:0; padding-top:0; margin-right:0; padding-right:0; margin-bottom:0; padding-bottom:0; margin-left:0; padding-left:0;  text-align: center; text-shadow: none" align="center"><span class="foote-text_color_span_wrapper" style="color: #999999">Grasswire © 2015 All Rights Reserved.</span></p>
+                                                                                        <p class="foote-text" style="color: #999999 !important; font-family: Roboto, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 11px; font-style: normal; line-height: 13px;  margin-top:0; padding-top:0; margin-right:0; padding-right:0; margin-bottom:0; padding-bottom:0; margin-left:0; padding-left:0;  text-align: center; text-shadow: none" align="center"><span class="foote-text_color_span_wrapper" style="color: #999999">You are receiving this email because you signed up on Grasswire.com</span></p>
+                                                                                    </div>
+                                                                                </td>
+                                                                            </tr>
+                                                                        </tbody>
+                                                                    </table>
+                                                                </td>
+                                                            </tr>
+                                                            <tr align="left" style="background: #EEEEEE; border-collapse: collapse; border-spacing: 0; border: 0" bgcolor="#EEEEEE">
+                                                                <td>
+                                                                    <table cellspacing="0" cellpadding="0" border="0" style="border-collapse: collapse; border-spacing: 0; border: 0; margin-top: 0px !important; min-width: 357px; padding-top: 0px !important">
+                                                                        <tbody>
+                                                                            <tr style="border-collapse: collapse; border-spacing: 0; border: 0">
+                                                                                <td width="357" align="left" valign="middle" style="background: #EEEEEE" height="27" bgcolor="#EEEEEE">
+                                                                                    <div style="height: 26px; max-height: 26px; max-width: 356px; overflow: hidden; width: 356px">
+                                                                                        <p class="foote-text" style="color: #999999 !important; font-family: Roboto, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 11px; font-style: normal; line-height: 13px;  margin-top:0; padding-top:0; margin-right:0; padding-right:0; margin-bottom:0; padding-bottom:0; margin-left:0; padding-left:0;  text-align: center; text-shadow: none" align="center"><span class="foote-text_color_span_wrapper" style="color: #999999"><a class="footer-links" href="*|ARCHIVE|*" target="_blank" style="color: #999999 !important; font-weight: 700;  margin-top:0; padding-top:0; margin-right:0; padding-right:0; margin-bottom:0; padding-bottom:0; margin-left:0; padding-left:0;  text-decoration: underline; text-shadow: none"><span class="footer-links_color_span_wrapper" style="color: #999999">view in browser</span></a>   <a class="footer-links" href="*|UNSUB|*" target="_blank" style="color: #999999 !important; font-weight: 700;  margin-top:0; padding-top:0; margin-right:0; padding-right:0; margin-bottom:0; padding-bottom:0; margin-left:0; padding-left:0;  text-decoration: underline; text-shadow: none"><span class="footer-links_color_span_wrapper" style="color: #999999">unsubscribe</span></a>   <a class="footer-links" href="*|UPDATE_PROFILE|*" target="_blank" style="color: #999999 !important; font-weight: 700;  margin-top:0; padding-top:0; margin-right:0; padding-right:0; margin-bottom:0; padding-bottom:0; margin-left:0; padding-left:0;  text-decoration: underline; text-shadow: none"><span class="footer-links_color_span_wrapper" style="color: #999999">update subscription preferences</span></a></span>
+                                                                                        </p>
+                                                                                    </div>
+                                                                                </td>
+                                                                            </tr>
+                                                                        </tbody>
+                                                                    </table>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </td>
+                                                <td width="129" align="left" valign="top" style="background: #EEEEEE" height="114" bgcolor="#EEEEEE"><img height="114" src="https://gallery.mailchimp.com/3ad2895e9613627e104c66f13/images/9473aa82-44cf-4eb6-b0fc-fdb9f765d7df.gif" style="border: 0; display: block; line-height: 0px; opacity: 0" width="129" /></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr align="left" style="background: #EEEEEE; border-collapse: collapse; border-spacing: 0; border: 0" bgcolor="#EEEEEE">
+                                <td>
+                                    <table cellspacing="0" cellpadding="0" border="0" style="border-collapse: collapse; border-spacing: 0; border: 0; margin-top: 0px !important; min-width: 615px; padding-top: 0px !important">
+                                        <tbody>
+                                            <tr style="border-collapse: collapse; border-spacing: 0; border: 0">
+                                                <td width="615" align="left" valign="top" style="background: #EEEEEE" height="30" bgcolor="#EEEEEE"><img height="30" src="https://gallery.mailchimp.com/3ad2895e9613627e104c66f13/images/9473aa82-44cf-4eb6-b0fc-fdb9f765d7df.gif" style="border: 0; display: block; line-height: 0px; opacity: 0" width="615" /></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr align="left" style="border-collapse: collapse; border-spacing: 0; border: 0">
+                                <td>
+                                    <table cellspacing="0" cellpadding="0" border="0" style="border-collapse: collapse; border-spacing: 0; border: 0; margin-top: 0px !important; min-width: 615px; padding-top: 0px !important">
+                                        <tbody>
+                                            <tr style="border-collapse: collapse; border-spacing: 0; border: 0">
+                                                <td align="left" valign="top">
+                                                    <table align="center" cellspacing="0" cellpadding="0" border="0" style="border-collapse: collapse; border-spacing: 0; border: 0; margin: 0px 0 0; min-width: 615px; padding: 0px 0 0">
+                                                        <tbody>
+                                                            <tr align="left" style="border-collapse: collapse; border-spacing: 0; border: 0">
+                                                                <td>
+                                                                    <table cellspacing="0" cellpadding="0" border="0" style="border-collapse: collapse; border-spacing: 0; border: 0; margin-top: 0px !important; min-width: 615px; padding-top: 0px !important">
+                                                                        <tbody>
+                                                                            <tr style="border-collapse: collapse; border-spacing: 0; border: 0">
+                                                                                <td width="284" align="left" valign="top" style="background: #EEEEEE" height="47" bgcolor="#EEEEEE"><img height="47" src="https://gallery.mailchimp.com/3ad2895e9613627e104c66f13/images/9473aa82-44cf-4eb6-b0fc-fdb9f765d7df.gif" style="border: 0; display: block; line-height: 0px; opacity: 0" width="284" /></td>
+                                                                                <td align="left" valign="top" style="line-height: 0px; mso-line-height-rule: exactly">
+                                                                                    <a href="http://grasswire.com/src=email&id=*|CAMPAIGN_UID|*" target="_blank" style="border: none; color: #3A919E !important; display: block; font-size: 10px; font-weight: 700;  margin-top:0; padding-top:0; margin-right:0; padding-right:0; margin-bottom:0; padding-bottom:0; margin-left:0; padding-left:0;  text-decoration: none; text-shadow: none"><img alt="GRASSWIRE" src="https://gallery.mailchimp.com/3ad2895e9613627e104c66f13/images/1a73fc54-f7b3-436a-8b83-5fb8e0400fef.jpg" style="border: 0; color: #000001 !important; display: block; line-height: 0px" /></a>
+                                                                                </td>
+                                                                                <td width="285" align="left" valign="top" style="background: #EEEEEE" height="47" bgcolor="#EEEEEE"><img height="47" src="https://gallery.mailchimp.com/3ad2895e9613627e104c66f13/images/9473aa82-44cf-4eb6-b0fc-fdb9f765d7df.gif" style="border: 0; display: block; line-height: 0px; opacity: 0" width="285" /></td>
+                                                                            </tr>
+                                                                        </tbody>
+                                                                    </table>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr align="left" style="background: #EEEEEE; border-collapse: collapse; border-spacing: 0; border: 0" bgcolor="#EEEEEE">
+                                <td>
+                                    <table cellspacing="0" cellpadding="0" border="0" style="border-collapse: collapse; border-spacing: 0; border: 0; margin-top: 0px !important; min-width: 615px; padding-top: 0px !important">
+                                        <tbody>
+                                            <tr style="border-collapse: collapse; border-spacing: 0; border: 0">
+                                                <td width="615" align="left" valign="top" style="background: #EEEEEE" height="44" bgcolor="#EEEEEE"><img height="44" src="https://gallery.mailchimp.com/3ad2895e9613627e104c66f13/images/9473aa82-44cf-4eb6-b0fc-fdb9f765d7df.gif" style="border: 0; display: block; line-height: 0px; opacity: 0" width="615" /></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+
+
+                        </tbody>
+                    </table>
+                </div>
+            </td>
+        </tr>
+    </table>
+</body>
+
+</html>

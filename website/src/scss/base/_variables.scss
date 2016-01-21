@@ -1,0 +1,83 @@
+
+// Font Stack .................................................................
+$font-size-base:  62.5%;
+$font-generic: "Helvetica Neue", Helvetica, "Lucida Grande", Arial, sans-serif;
+
+$font-stack: (
+   light:            #{'HelveticaNeueW01-45Ligh', $font-generic},
+   light-italic:     #{'HelveticaNeueW01-46Ligh', $font-generic},
+   regular:          #{"HelveticaNeueW01-55Roma", $font-generic},
+   regular-italic:   #{"HelveticaNeueW01-56It", $font-generic},
+   bold:             #{"HelveticaNeueW01-65Medi", $font-generic},
+   bold-italic:      #{"HelveticaNeueW01-66Medi", $font-generic},
+   cond-bold:        #{"HelveticaNeueW01-67MdCn_692710", $font-generic},
+   cond-bold-italic: #{"HelveticaNeueW01-67MdCn_692713", $font-generic}
+);
+
+// Generic colors .............................................................
+$colors: (
+   alto:              #ddd,
+   gray:              #838383,
+   black:             #000,
+   nobel:             #b5b5b5,
+   white:             #fff,
+   silver:            #ccc,
+   edward:            #abb4b5,
+   tundora:           #444,
+   gallery:           #eee,
+   chambray:          #3B5998,
+   cerulean:          #019FE9,
+   pelorous:          #44a7b7,
+   alabaster:         #f8f8f8,
+   san-marino:        #415e9b,
+   dusty-gray:        #999,
+   mine-shaft:        #333,
+   texas-rose:        #ffb64e,
+   shakespeare:       #4CC0D2,
+   off-boston-blue:   #3a919e,
+   boston-blue:       #4099A8,
+   picton-blue:       #55acee,
+   black-squeeze:     #ecf6f8,
+   fountain-blue:     #4aa7b7,
+   silver-chalice:    #A3A3A3,
+   light-boston-blue: #459FAB
+);
+
+// Media Query Breakpoints ....................................................
+$breakpoints: (
+   'tiny':         320px,
+   'small-tiny':   480px,
+   'small':        640px,
+   'medium-small': 768px,
+   'medium':       980px,
+   'large':        1024px,
+   'xlarge':       1160px,
+   'xxlarge':      1280px
+);
+
+
+$general-border-radius: 4px;
+$general-transition-settings: all 400ms cubic-bezier(0.19, 1, 0.22, 1);
+
+$tag-border-radius: 2px;
+$current-z-index:   100;
+$masthead-height:   60px;
+$max-content-width: 980px;
+
+
+// Susy Grid Config ...........................................................
+// These are global to ALL grids on the site
+// if you're going to make a change here
+// for the love of god know what
+// you're doing...please
+$susy: (
+   columns:         16,
+   gutters:         0,
+   box-sizing:      border-box,
+   gutter-position: split
+);
+
+// We're just passing the configuration into Susy here
+@include layout($susy);
+
+

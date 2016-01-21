@@ -1,0 +1,17 @@
+.live {
+   .content-container {
+      overflow: auto;
+   }
+}
+
+.content-container {
+   @include container;
+   overflow: hidden;
+}
+
+
+.content-wrapper {
+   @include container;
+   max-width: $max-content-width;
+   margin: 0 auto;
+}

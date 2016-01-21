@@ -1,0 +1,16 @@
+
+<label class="label--full">Enter the MailChimp URL's for the images:</label>
+
+{{#loop limit}}
+   <label class="label--full">
+      <strong>Image {{@position}}:</strong>
+      <input type="text" class="js-image-url-{{@index}} input__text--full">
+   </label>
+{{/loop}}
+
+<label class="label--full">
+   <strong>(Optional) Display a message at the top of the email:</strong>
+   <textarea type="text" class="js-email-message input__text--full"></textarea>
+</label>
+
+<button class="button js-generate-digest">Generate Digest Email</button>

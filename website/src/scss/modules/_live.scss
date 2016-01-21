@@ -1,0 +1,76 @@
+.live {
+
+   &__title {
+      float: left;
+      text-transform: uppercase;
+      @include media("<=medium") {
+         padding: 0 0 0 20px;
+      }
+      @include media("<=small-tiny") {
+         display: block;
+         text-align: center;
+         width: 100%;
+      }
+   }
+
+   &__stream-block {
+      @include span(10 of 16 0.25);
+
+      @include media("<=small") {
+         @include span(16 of 16 0.25);
+      }
+   }
+
+   &__slack-wrapper {
+      height: 400px;
+      overflow: hidden;
+      margin: 0 auto;
+      position: relative;
+      width: 350px;
+   }
+   &__slack-frame {
+      height: 400px;
+      left: 0;
+      max-width: 350px;
+      position: absolute;
+      top: -100px;
+   }
+
+   &__video-stream {
+      background: get-color(white);
+      padding: 10px 15px;
+
+      iframe {
+         border: 0;
+      }
+   }
+
+   &__connect {
+      @include span(16 of 16);
+      background: get-color(white);
+      height: 300px;
+      padding: 33px 15px 0 15px;
+      text-align: center;
+
+      @include media("<=small") {
+         display: none;
+      }
+   }
+
+   &__video-title {
+      @include font-size(18px);
+      padding: 5px 0 0 0;
+   }
+
+   &__tweets {
+      @include span(last 6 of 16 0.25);
+      background: get-color(white);
+      padding: 10px 15px;
+      text-align: center;
+
+      @include media("<=small") {
+         @include span(16 of 16 0.25);
+         margin-top: 14px;
+      }
+   }
+}

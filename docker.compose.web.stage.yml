@@ -1,0 +1,6 @@
+web:
+  extends:
+    file: docker.web.common.yml
+    service: webapp
+  environment:
+    GW_HOST: https://api-prod.grasswire.com/

@@ -1,0 +1,31 @@
+.error {
+   &__scrape {
+      background: get-color(silver);
+      padding: 10px;
+
+   }
+
+   &__container {
+      @include container;
+      margin: 0 auto;
+      width: $max-content-width;
+
+      p {
+         @include font-size(18px);
+         color: get-color(mine-shaft);
+         float: left;
+
+         &.dismiss {
+            @include font-size(12px);
+            float: right;
+            line-height: 24px;
+            text-transform: uppercase;
+
+            a {
+               text-decoration: underline;
+            }
+         }
+      }
+
+   }
+}

@@ -1,0 +1,30 @@
+@import com.grasswire.common.json_models.TweetLinkJsonModel
+@import com.grasswire.common.json_models.PlainLinkJsonModel
+@import com.grasswire.common.json_models.VideoLinkJsonModel
+@(stories: List[com.grasswire.common.json_models.StoryJsonModel], storyId: Option[Long] = None)(implicit request: Request[Any], session: Option[com.grasswire.common.models.Session])
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+   <channel>
+      <title>Grasswire</title>
+      <link>https://grasswire.com</link>
+      <description>Grasswire is a collaborative newsroom that anyone can edit and curate</description>
+      <atom:link href="https://grasswire.com" rel="self" type="application/rss+xml" />
+
+      @for((story, index) <- stories.sortBy(s => s.rank).zipWithIndex) {
+         <item>
+            <title>@story.headline.getOrElse("")</title>
+            @story.summary match {
+               case Some(summary) => {
+                  <description>
+                     @Html(summary.replaceAll("\n", " "))
+                  </description>
+               }
+               case _ => {}
+            }
+            <pubDate>@story.updatedAt</pubDate>
+            <link>https://@request.host@routes.Application.lookupStory(story.id, story.name.replaceAll("[^a-zA-Z0-9]+","-"))</link>
+            <guid isPermalink="true">https://@request.host@routes.Application.lookupStory(story.id, story.name.replaceAll("[^a-zA-Z0-9]+","-"))</guid>
+         </item>
+      }
+   </channel>
+</rss>
+

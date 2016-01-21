@@ -1,0 +1,8 @@
+<ul class="js-sort order__list">
+   {{#each stories}}
+      <li class="js-sort-item order__item" data-story-id="{{ this.id }}" data-current-position="{{this.currentPosition}}">
+         <span class="order__handle fa fa-bars js-dragbar"></span>
+         <span class="order__tag">{{ this.title }}</span>
+      </li>
+   {{/each}}
+</ul>

@@ -1,0 +1,44 @@
+
+.hover {
+   bottom: -55px;
+   position: absolute;
+   left: -54px;
+
+   &__title {
+      @include font-size(14px);
+      background: get-color(boston-blue);
+      border-radius: $general-border-radius;
+      color: get-color(white);
+      margin: 0;
+      padding: 10px 0;
+      width: 140px;
+      text-align: center;
+      text-transform: none !important;
+   }
+
+   &__caret {
+      @include font-size(35px);
+      color: get-color(boston-blue);
+      display: block;
+      line-height: 0.3;
+      padding: 0;
+      text-align: center;
+   }
+
+   &--invert {
+      top: -228px;
+      left: -58px;
+      position: absolute;
+      width: 155px;
+      z-index: 300;
+
+      &__caret {
+         @include font-size(35px);
+         color: get-color(white);
+         display: block;
+         line-height: 0.3;
+         padding: 0;
+         text-align: center;
+      }
+   }
+}

@@ -1,0 +1,42 @@
+.share-links {
+   position: relative;
+
+
+   &__list {
+      list-style-type: none;
+      padding: 0;
+      position: relative;
+
+      @include media("<=medium-small") {
+         float: right;
+         text-align: right;
+      }
+   }
+
+   &__item {
+      @include font-size(26px);
+      color: get-color(mine-shaft);
+      float: left;
+      padding-right: 5px;
+
+      &.facebook {
+         color: get-color(chambray);
+      }
+      &.twitter {
+         color: get-color(cerulean);
+      }
+      &.reddit {
+         color: get-color(pelorous);
+      }
+      &.link {
+         color: get-color(pelorous);
+      }
+
+      @include media("<=small-tiny") {
+         @include font-size(20px);
+      }
+
+   }
+
+
+}

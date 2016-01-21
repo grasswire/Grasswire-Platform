@@ -1,0 +1,16 @@
+.profile-block {
+   background: get-color(white);
+   border-radius: 5px;
+   padding: 15px;
+   text-align: center;
+
+   &__avatar {
+      border-radius: 50%;
+      height: 90px;
+      width: 90px;
+   }
+
+   &__username {
+      @include font-size(14px);
+   }
+}

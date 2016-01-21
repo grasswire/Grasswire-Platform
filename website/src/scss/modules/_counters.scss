@@ -1,0 +1,28 @@
+.char-count {
+   &--title {
+      @include font-size(16px);
+      color: get-color(white);
+      text-align: right;
+      width: 50%;
+
+      @include media("<=small-tiny") {
+         color: get-color(tundora);
+      }
+   }
+   &--headline {
+      @include font-size(16px);
+      color: get-color(white);
+      text-align: right;
+      width: 100%;
+
+      @include media("<=small-tiny") {
+         color: get-color(tundora);
+      }
+   }
+   &--summary {
+      @include font-size(16px);
+      color: get-color(tundora);
+      text-align: right;
+      width: 100%;
+   }
+}

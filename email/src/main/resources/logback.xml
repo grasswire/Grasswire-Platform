@@ -1,0 +1,37 @@
+<configuration>
+    <appender name="rolling" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>/var/log/gw/content.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>logs/management.app-%d{yyyy-MM-dd}.%i.log.gz</fileNamePattern>
+            <maxHistory>30</maxHistory>
+            <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+                <maxFileSize>100MB</maxFileSize>
+            </timeBasedFileNamingAndTriggeringPolicy>
+        </rollingPolicy>
+        <encoder>
+            <pattern>%cyan(%date{"yyyy-MM-dd'T'HH:mm:ss","UTC"},) %highlight(level=%level,) %cyan(logger=%logger{15},) %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <logger name="scala.slick" level="info" additivity="true">
+    </logger>
+
+    <logger name="scredis.Client" level="error" additivity="true">
+    </logger>
+
+    <logger name="com.grasswire" level="info" additivity="true">
+    </logger>
+    <logger name="twitter4j" level="info" additivity="true">
+    </logger>
+    <logger name="com.jolbox.bonecp" level="info" additivity="true">
+    </logger>
+
+    <logger name="akka" level="debug" additivity="true">
+    </logger>
+
+    <root level="debug">
+        <!--<appender-ref ref="console"/>-->
+        <appender-ref ref="rolling"/>
+    </root>
+
+</configuration>

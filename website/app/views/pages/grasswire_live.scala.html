@@ -1,0 +1,80 @@
+@import com.grasswire.common.json_models.LivePageJsonModel
+@(livePage: LivePageJsonModel)(implicit request: Request[Any], session: Option[com.grasswire.common.models.Session])
+
+@head = {
+   <title>Live on Grasswire &#124; Your Newsroom</title>
+   <meta name="description" content="Live on Grasswire &#124; Your Newsroom">
+   <meta property="og:title" content="Live on Grasswire: @livePage.title">
+   <meta property="og:type" content="website">
+   <meta property="og:url" content="https://@request.host/live">
+   <meta property="og:image" content="https:@CdnAssets.at("images/gw-live.png")">
+   <meta property="og:description" content="Grasswire is a collaborative newsroom that anyone can edit and curate">
+   <meta name="twitter:card" content="summary_large_image">
+   <meta name="twitter:site" content="@@grasswire">
+   <meta name="twitter:title" content="Live on Grasswire: @livePage.title">
+   <meta name="twitter:description" content="Grasswire is a collaborative newsroom that anyone can edit and curate">
+   <meta name="twitter:creator" content="@@grasswire">
+   <meta name="twitter:image" content="https:@CdnAssets.at("images/gw-live.png")">
+   <meta name="twitter:url" content="https://@request.host/live">
+}
+
+
+@main(signature = "live", head = head) {
+   <header class="story__header">
+      <h1 class="live__title">@livePage.title</h1>
+<!--       <ul class="share-links__list--no-hover js-share-container" data-share-headline="Live on Grasswire: @livePage.title" data-share-url="https://@request.host/live">
+         <li class="share-links__item--small-text">SHARE</li>
+         <li class="share-links__item--small"><a href="#" title="Share on Facebook" class="js-share-popup-facebook share-links__button--facebook"><span class="fa fa-facebook-square">&nbsp;</span></a></li>
+         <li class="share-links__item--small"><a href="#" title="Share on Twitter" class="js-share-popup-twitter share-links__button--twitter"><span class="fa fa-twitter-square">&nbsp;</span></a></li>
+         <li class="share-links__item--small"><a href="#" title="Copy the Link" class="js-modal-open js-share-popup-link share-links__button--icon" data-modal-id="copy-link"><img src="@CdnAssets.at("images/button-copy-link-small-blue.svg")" alt=""></a></li>
+      </ul> -->
+   </header>
+   <main class="content-container">
+      <div class="content-wrapper js-wrapper">
+         <div class="live__stream-block js-livestream-block">
+            <div class="live__video-stream">
+               <iframe src="@livePage.videoEmbedUrl" width="100%" height="360"></iframe>
+            </div>
+            <div class="byline--live">
+               <div class="byline__content-container">
+                  <div class="byline__share-container">
+                     <p class="byline__text">Share</p>
+                     <ul class="share-links__list js-share-container" data-share-url="https://@request.host/live" data-share-headline="Live on Grasswire">
+                        <li class="share-links__item twitter"><a href="#" title="Share on Twitter" class="js-share-popup-twitter"><span class="fa fa-twitter">&nbsp;</span></a></li>
+                        <li class="share-links__item reddit"><a href="#" class="js-share-popup-reddit" title="Share on Reddit"><span class="fa fa-reddit-square">&nbsp;</span></a></li>
+                        <li class="share-links__item facebook"><a href="#" title="Share on Facebook" class="js-share-popup-facebook"><span class="fa fa-facebook-official">&nbsp;</span></a></li>
+                        <li class="share-links__item link"><a href="#" title="Copy the Link" class="js-modal-open js-share-popup-link" data-modal-id="copy-link"><span class="fa fa-link"></span></a></li>
+                     </ul>
+                  </div>
+               </div>
+            </div>
+            <div class="live__connect">
+               <div class="live__slack-wrapper">
+                  <iframe src="https://newsroom.grasswire.com/" frameborder="0" scrolling="no" class="live__slack-frame"></iframe>
+               </div>
+            </div>
+         </div>
+         <div class="live__tweets js-tweet-wrapper">
+            <a height="100%" class="twitter-timeline" href="https://twitter.com/GrasswireNow" data-widget-id="639823963644919809">Tweets by @@GrasswireNow</a>
+         </div>
+      </div>
+   </main>
+
+<script>window.twttr = (function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0],
+    t = window.twttr || {};
+  if (d.getElementById(id)) return t;
+  js = d.createElement(s);
+  js.id = id;
+  js.src = "https://platform.twitter.com/widgets.js";
+  fjs.parentNode.insertBefore(js, fjs);
+
+  t._e = [];
+  t.ready = function(f) {
+    t._e.push(f);
+  };
+
+  return t;
+}(document, "script", "twitter-wjs"));</script>
+
+}

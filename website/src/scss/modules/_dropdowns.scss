@@ -1,0 +1,33 @@
+.dropdown {
+   bottom: -55px;
+   position: absolute;
+   right: -10px;
+
+   &__list {
+      background: get-color(white);
+      border-radius: $general-border-radius;
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      width: 140px;
+   }
+   &__item {
+      @include font-size(14px);
+      text-align: center;
+
+      a {
+         color: get-color(pelorous);
+         display: block;
+         padding: 10px 0;
+      }
+   }
+
+   &__caret {
+      @include font-size(35px);
+      color: get-color(white);
+      display: block;
+      line-height: 0.3;
+      padding: 0 15px 0 0;
+      text-align: right;
+   }
+}

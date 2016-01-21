@@ -1,0 +1,19 @@
+@()(implicit req: Request[Any], session: Option[com.grasswire.common.models.Session])
+
+@main(signature = "general-page", title = "Page Not Found | Grasswire | The Internet's Newsroom") {
+
+   <header class="static-header">
+      <div class="static-wrapper">
+         <h1 class="static-header__headline">Page Not Found</h1>
+      </div>
+   </header>
+   <main>
+      <div class="static-wrapper">
+         <div class="content-block">
+            <h3 class="content-block__headline">Sorry, page not found</h3>
+            <p>We unable to find the page that you are attempting to access.</p>
+            <p><a href="@routes.Application.index(None)" title="Back to the home page">Back to the home page</a></p>
+         </div>
+      </div>
+   </main>
+}

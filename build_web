@@ -1,0 +1,11 @@
+#!/bin/bash
+
+pushd website
+
+npm install
+npm prune
+
+popd
+
+gulp compile --cwd="./website"
+

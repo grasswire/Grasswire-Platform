@@ -1,0 +1,12 @@
+@(story: com.grasswire.common.json_models.StoryJsonModel)(implicit request: Request[Any], session: Option[com.grasswire.common.models.Session])
+<div class="sidebar__content">
+   <div class="js-image-container sidebar__image-container" style="background: url(@story.coverPhoto.getOrElse(CdnAssets.at("images/default-feature.png")))">
+   <div class="sidebar__backdrop"></div>
+      <div class="sidebar__textblock">
+         <div class="sidebar__tag-wrapper">
+            <a class="sidebar__story-tag" href="@routes.Application.lookupStory(story.id, story.name.replaceAll("[^a-zA-Z0-9]+","-"))">@story.name</a>
+         </div>
+         <h4 class="sidebar__headline">@story.headline.getOrElse("")</h4>
+      </div>
+   </div>
+</div>

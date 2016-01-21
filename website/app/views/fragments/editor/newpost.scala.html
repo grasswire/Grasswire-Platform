@@ -1,0 +1,21 @@
+@()(implicit request: Request[Any], session: Option[com.grasswire.common.models.Session])
+
+<div class="story__new">
+   <h2 class="story__headline">Add a Link?</h2>
+   <input type="text" class="js-preview-input story__input" placeholder="Add new link, video, or image.">
+</div>
+
+<div class="preview-box js-preview-box " style="display: none;">
+   <div class="preview-box__profile">
+      <img src="@request.session.get("profile_image_url")" alt="" class="avatar">
+   </div>
+   <div class="preview-box__scraper-content js-scrape-preview"></div>
+   <div class="preview-box__buttons align-right">
+      <a class="button--edit js-story-tags">Add Story Tag</a>
+      <input class="input-text js-edit-tags" type="text" name="submissionTag" style="display: none;">
+   </div>
+   <div class="preview-box__buttons align-right">
+      <button class="button--edit js-editmode-postit">Preview</button>
+   </div>
+</div>
+

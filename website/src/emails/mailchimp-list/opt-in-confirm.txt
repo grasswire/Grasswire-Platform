@@ -1,0 +1,23 @@
+Welcome to Grasswire, Your Newsrooom.
+------------------------------------------------
+
+Thanks for signing up for the Grasswire daily digest. Before we can start sending your digests, we need you to confirm your e-mail address. Click the link below to finish signup.
+
+Click this link to confirm your subscription:
+
+##LINK
+
+If the link is not clickable, copy-paste it into
+your web browser.
+
+------------------------------------------------
+
+
+Grasswire (C) 2015 All Rights Reserved.
+You are receiving this email because you signed up on Grasswire.com
+
+unsubscribe:
+*|UNSUB|*
+
+update subscription preferences:
+*|UPDATE_PROFILE|*

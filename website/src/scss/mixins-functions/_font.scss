@@ -1,0 +1,26 @@
+@mixin font-size($fontSize, $toUnit: rem, $fromUnitSpecific: px) {
+    $currentUnit: unit($fontSize);
+    $currentValue: get-value($fontSize);
+
+    @if $currentUnit == "" {
+        $currentUnit: $fromUnitSpecific;
+    }
+
+    @if $currentUnit == "px" {
+        @if $toUnit == "rem" {
+            font-size: unquote(($currentValue) + px);
+            font-size: unquote(($currentValue / 10) + $toUnit);
+        }
+        @else if $toUnit == "em" {
+            font-size: unquote(($currentValue / 10) + $toUnit);
+        }
+    }
+    @else if $currentUnit == "rem" or $currentUnit == "em" {
+        @if $toUnit == "px" {
+            font-size: unquote(($currentValue * 10) + px);
+        }
+        @else {
+            font-size: unquote(($currentValue) + $toUnit);
+        }
+    }
+}

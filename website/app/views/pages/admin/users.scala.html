@@ -1,0 +1,19 @@
+@()(implicit request: Request[Any], session: Option[com.grasswire.common.models.Session])
+
+@admin(signature = "admin") {
+   <header class="content-container">
+      <div class="content-wrapper">
+         <h1 class="headline">Search Users</h1>
+      </div>
+   </header>
+   <main class="content-container">
+      <div class="content-wrapper">
+         <input class="input__text--full js-user-search" type="text" name="" value="" placeholder="Enter A Username">
+         <div class="js-quick-profile"></div>
+      </div>
+   </main>
+}
+
+
+
+

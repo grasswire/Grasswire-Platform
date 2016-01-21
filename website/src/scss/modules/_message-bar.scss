@@ -1,0 +1,44 @@
+.message-bar {
+   @include font-size(18px);
+   background: get-color(alabaster);
+   color: get-color(tundora);
+   line-height: 1.8;
+   margin: 0 auto;
+   padding: 25px 0;
+   position: fixed;
+   top: 60px;
+   width: 100%;
+   z-index: set-zindex(36);
+
+   &__content {
+      margin: 0 auto;
+      max-width: $max-content-width;
+   }
+
+   &__dismiss {
+      @include font-size(18px);
+      color: get-color(silver);
+      line-height: 1.8;
+      position: absolute;
+      right: 15px;
+      top: 25px;
+
+      @include media("<small-tiny") {
+         top: 2px;
+      }
+   }
+
+   &__messages {
+      padding: 0 75px;
+
+      @include media("<small-tiny") {
+         padding: 0 10px;
+      }
+   }
+
+   &__links {
+      font-style: italic;
+      text-decoration: underline;
+   }
+}
+

@@ -1,0 +1,16 @@
+@(stories: List[com.grasswire.common.json_models.StoryJsonModel])(implicit request: Request[Any], session: Option[com.grasswire.common.models.Session])
+<aside class="js-sidebar sidebar">
+   <div class="js-sidebar-launcher sidebar__icon--inside">
+      <a href="#" title="" class="js-sidebar-button">
+         <span class="fa fa-chevron-left sidebar__caret--swap"></span>
+         <span class="fa fa-bars sidebar__hamburger"></span>
+      </a>
+   </div>
+      <ul class="sidebar__story-list">
+         @for((story, index) <- stories.sortBy(s => s.rank).zipWithIndex) {
+            <li class="sidebar__story-item js-sidebar-item" data-sidebar-story="@story.id">
+               @fragments.reader.sidebar_feature(story)
+            </li>
+         }
+      </ul>
+</aside>

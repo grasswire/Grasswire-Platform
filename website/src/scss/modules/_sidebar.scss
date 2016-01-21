@@ -1,0 +1,127 @@
+.sidebar {
+   background: get-color(boston-blue);
+   height: 100%;
+   margin-left: -250px;
+   margin-top: -117px;
+   position: fixed;
+   overflow-y: scroll;
+   width: 250px;
+   z-index: 141;
+
+   &__background {
+      background: rgba(0, 0, 0, 0);
+      bottom: 0;
+      display: none;
+      left: 0;
+      position: fixed;
+      right: 0;
+      top: 0;
+      z-index: 135;
+   }
+
+   &__backdrop {
+      background: rgba(get-color(black), 0.5);
+      position: absolute;
+      height: 145px;
+      width: 100%;
+      z-index: 101;
+   }
+
+   &__icon {
+      @include container();
+      color: get-color(white);
+      position: absolute;
+      padding-left: 15px;
+
+      &--inside {
+         @include container;
+         color: get-color(white);
+         position: absolute;
+         right: 15px;
+      }
+   }
+
+   &__hamburger {
+      @include font-size(23px);
+      padding-top: 17px;
+      float: left;
+      display: block;
+   }
+
+   &__content {
+      background: transparent url(../images/default-feature.png) 0 0 no-repeat;
+   }
+
+   &__caret {
+      @include font-size(15px);
+       padding-top: 22px;
+       display: block;
+       float: left;
+       padding-left: 3px;
+
+       &--swap {
+          @include font-size(15px);
+          padding-top: 22px;
+          display: block;
+          float: left;
+          padding-right: 3px;
+       }
+   }
+
+   &__story-list {
+      list-style-type: none;
+      margin: 60px 0 0 0;
+      padding: 0;
+   }
+
+   &__story-item {
+      position: relative;
+      cursor: pointer;
+      &.currently-active {
+         .sidebar__textblock {
+            z-index: 116;
+         }
+      }
+      &:hover {
+         .sidebar__textblock {
+            z-index: 116;
+         }
+      }
+   }
+
+   &__image-container {
+      overflow: hidden;
+      height: 145px;
+      position: relative;
+   }
+
+   &__textblock {
+      position: absolute;
+      width: 100%;
+   }
+
+   &__tag-wrapper {
+      margin: auto 10px;
+   }
+
+   &__story-tag {
+      @include get-stack(bold);
+      @include font-size(16px);
+      background: get-color(boston-blue);
+      border-radius: $tag-border-radius;
+      color: get-color(white);
+      display: inline-block;
+      margin: 10px auto;
+      padding: 5px 15px;
+      text-transform: uppercase;
+   }
+
+   &__headline {
+      @include get-stack(cond-bold);
+      @include font-size(16px);
+      color: get-color(white);
+      letter-spacing: 1px;
+      margin: 0 10px;
+   }
+}
+

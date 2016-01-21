@@ -1,0 +1,28 @@
+@(story: com.grasswire.common.json_models.StoryJsonModel)(implicit request: Request[Any], session: Option[com.grasswire.common.models.Session])
+<div class="js-wrapper wrapper">
+   <div class="js-image-container feature__image-container">
+      <div class="feature__gradient"></div>
+      <img class="feature__image js-image-checker" src="@story.coverPhoto.getOrElse(CdnAssets.at("images/default-feature.png"))" alt="">
+   </div>
+   <div class="feature">
+      <div class="feature__tag-wrapper">
+         <a class="feature__tag" href="@routes.Application.lookupStory(story.id, story.name.replaceAll("[^a-zA-Z0-9]+","-"))">@story.name</a>
+      </div>
+      <div class="view--from--small-tiny">
+         @fragments.reader.byline(story)
+      </div>
+      <h1 class="feature__text">@story.headline.getOrElse("")</h1>
+   </div>
+</div>
+<div class="view--to--small-tiny">
+   @fragments.reader.byline(story)
+</div>
+@story.summary match {
+   case Some(summary) => {
+      <h2 class="story__subheadline">The Facts</h2>
+      <div class="story__summary">
+         @Html(summary.replaceAll("\n", "<br>"))
+      </div>
+   }
+    case _ => {}
+}

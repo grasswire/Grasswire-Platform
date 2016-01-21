@@ -1,0 +1,42 @@
+.contribution {
+   @include container();
+   align-items: center;
+   display: flex;
+   margin-bottom: 45px;
+
+   &__image {
+      height: 150px;
+      overflow: hidden;
+      width: 270px;
+
+      img {
+         height: auto;
+         padding: 0 40px 0 0;
+         width: 270px;
+      }
+   }
+   &__content {
+      @include span(last 12 of 16);
+   }
+
+   &__tag {
+      @include font-size(18px);
+      display: block;
+      margin: 0 0 -23px 0;
+      text-transform: uppercase;
+   }
+
+   &__headline {
+      @include font-size(30px);
+      @include get-stack(regular);
+   }
+
+   &__page-headline {
+      @include font-size(14px);
+      @include get-stack(light);
+      color: get-color(dusty-gray);
+      letter-spacing: 1px;
+      margin: 10px 0 20px 0;
+      text-transform: uppercase;
+   }
+}

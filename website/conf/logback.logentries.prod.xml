@@ -1,0 +1,22 @@
+<configuration>
+   <appender name="LE"
+             class="com.logentries.logback.LogentriesAppender">
+      <Debug>False</Debug>
+      <Token>22cf51df-0987-4bd5-8e76-7f182dd2a52b</Token>
+      <Ssl>False</Ssl>
+      <facility>USER</facility>
+      <layout>
+         <pattern>%cyan(%date{"yyyy-MM-dd'T'HH:mm:ss","UTC"},) %highlight(level=%level) %logger{36} web.prod %black(%msg%n)</pattern>
+      </layout>
+   </appender>
+   <logger name="akka.event.slf4j.Slf4jLogger" level="error" additivity="true">
+   </logger>
+   <logger name="com.gettyimages.spray.swagger" level="error" additivity="true">
+   </logger>
+   <logger name="com.ning.http.client" level="ERROR" />
+   <logger name="play.api.libs.ws" level="ERROR" />
+
+   <root level="info">
+      <appender-ref ref="LE" />
+   </root>
+</configuration>

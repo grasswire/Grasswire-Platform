@@ -1,0 +1,18 @@
+
+<input type="hidden" value="{{title}}" class="js-new-item-title">
+<input type="hidden" value="{{url}}" class="js-new-item-url">
+<input type="hidden" value="{{description}}" class="js-new-item-description">
+<input type="hidden" value="{{canonicalUrl}}" class="js-new-item-canonical-url">
+<input type="hidden" value="{{image}}" class="js-new-item-image">
+
+<h2>{{title}}</h2>
+{{#if image}}
+   <div class="mediabox__visual--bigscreen">
+      <img src="{{image}}" alt="{{image}}">
+   </div>
+{{/if}}
+<div class="mediabox--preview__content">
+   <p class="mediabox--preview__description">{{description}}</p>
+   <p class="mediabox--preview__see-more">see original at <a href="{{url}}" target="_blank" title="">{{canonicalUrl}}</a></p>
+</div>
+

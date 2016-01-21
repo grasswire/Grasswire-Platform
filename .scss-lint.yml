@@ -1,0 +1,196 @@
+# Default application configuration that all configurations inherit from.
+
+scss_files: "**/*.scss"
+plugin_directories: ['.scss-linters']
+
+# List of gem names to load custom linters from (make sure they are already
+# installed)
+plugin_gems: []
+
+linters:
+  BangFormat:
+    enabled: true
+
+  BemDepth:
+    enabled: true
+    max_elements: 3
+
+  BorderZero:
+    enabled: true
+
+  ColorKeyword:
+    enabled: true
+
+  ColorVariable:
+    enabled: true
+
+  Comment:
+    enabled: true
+
+  ColorVariable:
+    enabled: true
+
+  DebugStatement:
+    enabled: true
+
+  DeclarationOrder:
+    enabled: true
+
+  DisableLinterReason:
+    enabled: false
+
+  DuplicateProperty:
+    enabled: true
+
+  EmptyRule:
+    enabled: true
+
+  EmptyLineBetweenBlocks:
+    enabled: true
+
+  ExtendDirective:
+    enabled: true
+
+  FinalNewline:
+    enabled: true
+
+  HexLength:
+    enabled: true
+
+  HexNotation:
+    enabled: true
+
+  HexValidation:
+    enabled: true
+
+  IdSelector:
+    enabled: true
+
+  ImportantRule:
+    enabled: true
+
+  ImportPath:
+    enabled: true
+
+  Indentation:
+    enabled: true
+    character: space
+    width: 3
+
+  MergeableSelector:
+    enabled: true
+    force_nesting: true
+
+  NameFormat:
+    enabled: true
+    allow_leading_underscore: false
+    convention: camel_case # hyphenated_lowercase' or, or 'snake_case', or a regex pattern
+
+  NestingDepth:
+    enabled: true
+    max_depth: 3
+
+  PlaceholderInExtend:
+    enabled: true
+
+  PropertySpelling:
+    enabled: true
+
+  PropertySortOrder:
+    enabled: true
+
+  SpaceAfterComma:
+    enabled: trueEmptyLineBetweenBlocks
+
+  SpaceAfterPropertyColon:
+    enabled: true
+
+  SpaceAfterPropertyName:
+    enabled: true
+
+  SpaceAfterVariableName:
+    enabled: true
+
+  SpaceAroundOperator:
+    enabled: true
+
+  SpaceBeforeBrace:
+    enabled: true
+
+  SelectorDepth:
+    enabled: true
+    max_depth: 3
+
+  SelectorFormat:
+    enabled: false
+
+  Shorthand:
+    enabled: true
+
+  SingleLinePerProperty:
+    enabled: false
+
+  SingleLinePerSelector:
+    enabled: true
+
+  SpaceAfterComma:
+    enabled: true
+
+  SpaceAfterPropertyColon:
+    enabled: true
+    allow_extra_spaces: false
+
+  SpaceAfterPropertyName:
+    enabled: true
+
+  SpaceBeforeBrace:
+    enabled: true
+    allow_single_line_padding: false
+
+  SpaceBetweenParens:
+    enabled: false
+
+  StringQuotes:
+    enabled: true
+    style: double_quotes
+
+  StringQuotes:
+    enabled: true
+    style: double_quotes
+
+  TrailingSemicolon:
+    enabled: true
+
+  TrailingWhitespace:
+    enabled: true
+
+  TrailingZero:
+    enabled: false
+
+  TransitionAll:
+    enabled: false
+
+  UnnecessaryMantissa:
+    enabled: true
+
+  UnnecessaryParentReference:
+    enabled: true
+
+  UrlFormat:
+    enabled: true
+
+  UrlQuotes:
+    enabled: true
+
+  VariableForProperty:
+    enabled: false
+
+  VendorPrefix:
+    enabled: true
+
+  ZeroUnit:
+    enabled: true
+
+  Compass::*:
+    enabled: false
+

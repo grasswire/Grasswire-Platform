@@ -1,0 +1,141 @@
+/**
+ * There's a cleaner way to do this for sure
+ * so I'm going to come back to this at
+ * some point in the near future but
+ * not gonna worry about it today
+ */
+.view {
+   &--to {
+      &--tiny {
+         @include media(">tiny") {
+            display: block;
+         }
+         @include media("<=tiny") {
+            display: none !important;
+         }
+      }
+      &--small-tiny {
+         @include media(">small-tiny") {
+            display: block;
+         }
+         @include media("<=small-tiny") {
+            display: none !important;
+         }
+      }
+      &--small {
+         @include media(">small") {
+            display: block;
+         }
+         @include media("<=small") {
+            display: none !important;
+         }
+      }
+      &--medium-small {
+         @include media(">medium-small") {
+            display: block;
+         }
+         @include media("<=medium-small") {
+            display: none !important;
+         }
+      }
+      &--medium {
+         @include media(">medium") {
+            display: block;
+         }
+         @include media("<=medium") {
+            display: none !important;
+         }
+      }
+      &--large {
+         @include media(">large") {
+            display: block;
+         }
+         @include media("<=large") {
+            display: none !important;
+         }
+      }
+      &--xlarge {
+         @include media(">xlarge") {
+            display: block;
+         }
+         @include media("<=xlarge") {
+            display: none !important;
+         }
+      }
+      &--xxlarge {
+         @include media(">xxlarge") {
+            display: block;
+         }
+         @include media("<=xxlarge") {
+            display: none !important;
+         }
+      }
+   }
+
+   &--from {
+      &--tiny {
+         @include media(">tiny") {
+            display: none !important;
+         }
+         @include media("<=tiny") {
+            display: block;
+         }
+      }
+      &--small-tiny {
+         @include media(">small-tiny") {
+            display: none !important;
+         }
+         @include media("<=small-tiny") {
+            display: block;
+         }
+      }
+      &--small {
+         @include media(">small") {
+            display: none !important;
+         }
+         @include media("<=small") {
+            display: block;
+         }
+      }
+      &--medium-small {
+         @include media(">medium-small") {
+            display: none !important;
+         }
+         @include media("<=medium-small") {
+            display: block;
+         }
+      }
+      &--medium {
+         @include media(">medium") {
+            display: none !important;
+         }
+         @include media("<=medium") {
+            display: block;
+         }
+      }
+      &--large {
+         @include media(">large") {
+            display: none !important;
+         }
+         @include media("<=large") {
+            display: block;
+         }
+      }
+      &--xlarge {
+         @include media(">xlarge") {
+            display: none !important;
+         }
+         @include media("<=xlarge") {
+            display: block;
+         }
+      }
+      &--xxlarge {
+         @include media(">xxlarge") {
+            display: none !important;
+         }
+         @include media("<=xxlarge") {
+            display: block;
+         }
+      }
+   }
+}

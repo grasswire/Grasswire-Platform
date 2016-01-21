@@ -1,0 +1,24 @@
+api:
+  dockerfile: Dockerfile.api
+  build: .
+  expose:
+   - "8080"
+  ports:
+   - "8080:8080"
+  volumes:
+   - .:/code
+   - ~/.ivy2:/root/.ivy2
+  links:
+   - postgres
+   - redis
+  environment:
+      VIRTUAL_HOST: api.docker
+      REDIS_HOST: redis
+      POSTGRES_HOST: postgres
+  stdin_open: true
+postgres:
+  image: postgres
+  ports:
+   - "5432:5432"
+redis:
+  image: redis

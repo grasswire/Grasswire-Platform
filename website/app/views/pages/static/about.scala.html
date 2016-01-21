@@ -1,0 +1,25 @@
+@()(implicit req: Request[Any], session: Option[com.grasswire.common.models.Session])
+
+@main(signature = "static-page", title = "About | Grasswire | The Internet's Newsroom") {
+
+   <header class="static-header">
+      <div class="static-wrapper">
+         <h1 class="static-header__headline">About Grasswire</h1>
+         <h2 class="static-header__sub-headline">Your Newsroom</h2>
+      </div>
+   </header>
+   <main>
+      <div class="static-wrapper">
+         <div id="overview" class="content-block">
+            <h3 class="content-block__headline">About Grasswire</h3>
+            <p>Grasswire is a collaborative news service that anyone can edit, curate and fact-check.</p>
+            <h3 class="content-block__headline">Anyone Can Edit</h3>
+            <p>The changes and contributions you make on Grasswire go live immediately and are seen by hundreds of thousands of people every day.</p>
+            <p>Remember &ndash; you can't break Grasswire; any edits can be instantly reversed or changed so do what you think is best. Other users may suggest ways to improve and we'll all get better at finding and reporting the news together.</p>
+            <h3 class="content-block__headline">Daily Digest</h3>
+            <p>Every day, a short digest of the news found and fact-checked by Grasswire users goes out to tens of thousands of people in an email and iOS app.</p>
+            <p>Get started by <a href="/auth/twitter" title="editing Grasswire">editing Grasswire</a>, or jump in the <a href="http://newsroom.grasswire.com" target="_blank" title="Grasswire newsroom on Slack">Grasswire newsroom on Slack</a>.</p>
+         </div>
+      </div>
+   </main>
+}

@@ -1,0 +1,62 @@
+@import com.grasswire.common.models.PagedResult
+@import com.grasswire.common.json_models.StoryChangelogJsonModel
+@(result: PagedResult[StoryChangelogJsonModel])(implicit request: Request[Any], session: Option[com.grasswire.common.models.Session])
+
+@admin(signature = "admin") {
+
+   <header class="content-container">
+      <div class="content-wrapper">
+         <h1 class="headline">Change Log</h1>
+         <ul class="controls">
+            <li class="controls__item"><a href="#" title="Revert to this row" class="js-revert-to button"><span class="fa fa-undo"></span> Revert</a></li>
+            <li class="controls__item"><a href="/admin/change_logs" title="Revert to this row" class="button">Back</a></li>
+         </ul>
+      </div>
+   </header>
+   <main class="content-container">
+      <div class="content-wrapper">
+         <table cellpadding="0" cellspacing="0" class="changelog--stories">
+            <thead>
+               <tr class="changelog__header">
+                  <th>Name</th>
+                  <th>Photo</th>
+                  <th>Headline</th>
+                  <th>Summary</th>
+                  <th class="center">Hidden</th>
+                  <th class="center">User</th>
+               </tr>
+            </thead>
+            <tbody>
+            @for(change <- result.data.sortBy(c => -c.id)) {
+               <tr class="js-revision changelog__row" data-story-id="@change.storyId" data-id="@change.id">
+                   <td class="js-revertable js-revert-name changelog__revertable" width="10%">@change.name</td>
+                   <td class="js-revertable js-revert-image changelog__revertable"><img class="changelog__cover-image" src="@change.coverPhoto" alt=""><br><a href="@change.coverPhoto" target="_blank" title="">view larger</a></td>
+                   <td class="js-revertable js-revert-headline changelog__revertable" width="17%">@change.headline</td>
+                   <td class="js-revertable js-revert-summary changelog__revertable"width="30%">@change.summary</td>
+                   <td class="js-revertable js-revert-hidden changelog__revertable" align="center">@change.hidden</td>
+                   <td align="center">@change.updatedBy</td>
+               </tr>
+            }
+            </tbody>
+         </table>
+         <ul class="paginator__list">
+            <li class="paginator__item--no-border">
+               @if(result.paging.offset > 0){
+                  <a href="?max=@result.paging.limit&amp;offset=@(result.paging.offset-1)" title="Previous Page"><span class="fa fa-arrow-circle-left"></span></a>
+               }else{
+                  <a href="?max=@result.paging.limit&amp;offset=0" title="Previous Page"><span class="fa fa-arrow-circle-left"></span></a>
+               }
+            </li>
+            <li class="paginator__item--message">Page @(result.paging.offset + 1) of @((result.paging.total / result.paging.limit) + 1)</li>
+            <li class="paginator__item--no-border">
+               @if(result.paging.offset <= (result.paging.total / result.paging.limit) - 1){
+                  <a href="?max=@result.paging.limit&amp;offset=@(result.paging.offset+1)" title="Previous Page"><span class="fa fa-arrow-circle-right"></span></a>
+               }else{
+                  <a href="?max=@result.paging.limit&amp;offset=@((result.paging.total / result.paging.limit))" title="Next Page"><span class="fa fa-arrow-circle-right"></span></a>
+               }
+            </li>
+         </ul>
+      </div>
+   </main>
+}
+

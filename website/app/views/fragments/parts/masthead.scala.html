@@ -1,0 +1,79 @@
+@(storyId: Option[Long] = None)(implicit request: Request[Any], session: Option[com.grasswire.common.models.Session])
+<div class="masthead">
+   <div class="js-sidebar-launcher sidebar__icon">
+      <a href="#" title="" class="js-sidebar-button">
+         <span class="fa fa-bars sidebar__hamburger"></span>
+         <span class="fa fa-chevron-right sidebar__caret"></span>
+      </a>
+   </div>
+   <div class="masthead__wrapper">
+      <div class="masthead__container">
+         <div class="logo">
+            <a title="Grasswire" href="@routes.Application.index(None)"></a>
+         </div>
+         <nav class="navigation-main">
+            <ul class="navigation__list">
+               @if(request.session.get(Security.username).nonEmpty) {
+                  <!-- READER MODE -->
+                  <li class="navigation__item reader view--to--medium-small">
+                     <a href="/new-story" class="button" title="Add Story"><span class="fa fa-plus"></span> Add Story</a>
+                  </li>
+                  <li class="navigation__item reader view--from--medium-small">
+                     <a href="/new-story" class="button--iconic" title="Add Story" data-hover-title="Add Story"><span class="fa fa-plus"></span></a>
+                  </li>
+                  <li class="navigation__item reader view--to--medium-small">
+                     <a href="@routes.Application.edit(None, storyId)" class="js-edit-mode button" title="Edit Grasswire"><span class="fa fa-pencil"></span> Edit Grasswire</a>
+                  </li>
+                  <li class="navigation__item reader view--from--medium-small">
+                     <a href="@routes.Application.edit(None, storyId)" class="js-edit-mode button--iconic" title="Edit Grasswire" data-hover-title="Edit Grasswire"><span class="fa fa-pencil"></span></a>
+                  </li>
+                  <!-- EDITOR MODE -->
+                  <li class="navigation__item editor">
+                     <a href="@routes.Application.edit(None, storyId)" class="js-back-to-reader button--iconic js-clean" title="Publish Changes" data-hover-title="Publish Changes"><span class="fa fa-paper-plane navigation__paper-plane"></span></a>
+                  </li>
+                  <li class="navigation__item editor js-dirty" style="display: none;">
+                     <a href="@routes.Application.edit(None, storyId)" class="js-back-to-reader button--publish-changes view--to--medium-small js-edit-save" title="Publish Changes">Publish your changes <span class="button__standout fa fa-paper-plane navigation__paper-plane"></span></a>
+                     <a href="@routes.Application.edit(None, storyId)" class="js-back-to-reader button--publish-changes--iconic view--from--medium-small js-edit-save" title="Publish Changes"><span class="fa fa-paper-plane navigation__paper-plane"></span></a>
+                  </li>
+                  <li class="navigation__item editor"><a href="/new-story" class="button--iconic" title="Add Story" data-hover-title="Add Story"><span class="fa fa-plus navigation__plus"></span></a></li>
+                  <li class="navigation__item editor"><a href="#reorder" class="button--iconic js-modal-open" data-modal-id="reorder" title="Reorder" data-hover-title="Reorder"><span class="fa fa-list-ul navigation__list-ul"></span></a></li>
+                  <li class="navigation__item editor"><a href="@routes.Application.index(None)" class="js-back-to-reader button--iconic" title="Cancel" data-hover-title="Cancel Changes"><span class="fa fa-times navigation__times"></span></a></li>
+
+                  <!-- ADD NEW MODE -->
+                  <li class="navigation__item add-new"><a href="#save-edit" class="button--iconic js-new-save" title="Publish Changes" data-hover-title="Publish Changes"><span class="fa fa-paper-plane navigation__paper-plane"></span></a></li>
+                  <li class="navigation__item add-new"><a href="@routes.Application.edit(None, storyId)" class="button--iconic" title="Cancel" data-hover-title="Cancel"><span class="fa fa-times navigation__times"></span></a></li>
+                  <li class="navigation__item">
+                     <a href="#profile" class="js-dropdown js-main-menu">
+                        <div class="navigation__avatar"><img src="@request.session.get("profile_image_url")" alt="@request.session.get("username")"></div>
+                     </a>
+                     <div class="dropdown js-dropdown-content" data-dropdown="#profile" style="display: none;">
+                        <span class="dropdown__caret fa fa-caret-up"></span>
+                        <ul class="dropdown__list">
+                           <li class="dropdown__item"><a href="@routes.Application.logout()" title="Logout">Sign out</a></li>
+                        </ul>
+                     </div>
+                  </li>
+               } else {
+                  <li class="navigation__item reader view--to--medium-small">
+                     <a href="/auth/twitter/add" class="button" title="Add Story"><span class="fa fa-plus"></span> Add Story</a>
+                  </li>
+                  <li class="navigation__item reader view--from--medium-small">
+                     <a href="/auth/twitter/add" class="button--iconic" title="Add Story" data-hover-title="Add Story"><span class="fa fa-plus"></span></a>
+                  </li>
+                  <li class="navigation__item reader view--to--medium-small">
+                     <a href="/auth/twitter/edit" class="js-edit-mode button" title="Edit Grasswire"><span class="fa fa-pencil"></span> Edit Grasswire</a>
+                  </li>
+                  <li class="navigation__item reader view--from--medium-small">
+                     <a href="/auth/twitter/edit" class="js-edit-mode button--iconic" title="Edit Grasswire" data-hover-title="Edit Grasswire"><span class="fa fa-pencil"></span></a>
+                  </li>
+               }
+            </ul>
+         </nav>
+      </div>
+   </div>
+</div>
+<div class="newsroom-bar">
+   <div class="newsroom-bar__content">
+      <p>Grasswire is powered by an open newsroom. <a href="//newsroom.grasswire.com" target="_blank" title="Join it now">Enter it here</a>.</p>
+   </div>
+</div>

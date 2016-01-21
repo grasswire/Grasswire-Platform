@@ -1,0 +1,36 @@
+@mixin standard-input {
+   border: 1px solid get-color(silver-chalice);
+   border-radius: $general-border-radius;
+   padding: 10px;
+}
+
+@mixin standard-button($color) {
+   @include get-stack(regular);
+   @include font-size(14px);
+   background: $color;
+   border: none;
+   border-radius: $general-border-radius;
+   color: get-color(white) !important;
+   display: inline-block;
+   margin: 0;
+   padding: 10px 24px;
+   transition: $general-transition-settings;
+   text-transform: uppercase;
+   width: auto;
+
+   @include media("<medium-small") {
+      padding: 10px 15px;
+   }
+   @include media("<=small") {
+      padding: 10px 6px;
+   }
+   &:hover {
+      background: darken($color, 10%);
+   }
+}
+
+@mixin standard-label() {
+   @include font-size(16px);
+}
+
+

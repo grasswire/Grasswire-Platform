@@ -1,0 +1,20 @@
+@(story: com.grasswire.common.json_models.StoryJsonModel)(implicit request: Request[Any], session: Option[com.grasswire.common.models.Session])
+
+<div class="story__item--preview__item">
+   <div class="mediabox--preview">
+      <header class="mediabox--preview__header">
+         <div class="mediabox--preview__avatar">
+            <img src="@request.session.get("profile_image_url")" alt="">
+         </div>
+         <div class="mediabox--preview__userinfo">
+            @if(request.session.get(Security.username).nonEmpty) {
+               <div class="mediabox--preview__username">&#64;@request.session.get("username")</div>
+            }
+         </div>
+         <time class="mediabox--preview__timespan">now</time>
+      </header>
+      <div class="preview-box__scraper-content js-scrape-preview"></div>
+   </div>
+</div>
+
+

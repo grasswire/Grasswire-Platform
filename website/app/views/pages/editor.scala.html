@@ -1,0 +1,57 @@
+@import com.grasswire.common.json_models.TweetLinkJsonModel
+@import com.grasswire.common.json_models.PlainLinkJsonModel
+@import com.grasswire.common.json_models.VideoLinkJsonModel
+@(stories: List[com.grasswire.common.json_models.StoryJsonModel])(implicit request: Request[Any], session: Option[com.grasswire.common.models.Session])
+
+@head = {
+   <title>Editor &#124; Grasswire &#124; Your Newsroom</title>
+   <meta name="description" content="Editor &#124; Grasswire &#124; Your Newsroom">
+   <meta property="og:title" content="Editor &#124; Grasswire | Your Newsroom">
+   <meta property="og:type" content="website">
+   <meta property="og:url" content="https://@request.host">
+   <meta property="og:image" content="https:@CdnAssets.at("images/favicon.png")">
+   <meta property="og:description" content="Grasswire is a collaborative newsroom that anyone can edit and curate">
+   <meta name="twitter:card" content="summary_large_image">
+   <meta name="twitter:site" content="@@grasswire">
+   <meta name="twitter:title" content="Grasswire | Your Newsroom">
+   <meta name="twitter:description" content="Grasswire is a collaborative newsroom that anyone can edit and curate">
+   <meta name="twitter:creator" content="@@grasswire">
+   <meta name="twitter:image" content="https:@CdnAssets.at("images/favicon.png")">
+   <meta name="twitter:url" content="https://@request.host">
+}
+
+
+@main(signature = "editor", head = head) {
+   <main class="content-container">
+      @for(story <- stories.sortBy(s => s.rank)) {
+         <ul class="story__list js-story" data-story-id="@story.id" data-story-name="@story.name" id="feature-@story.id">
+            <li class="story__item--feature js-edit-feature" data-story-id="@story.id">
+               @fragments.editor.feature(story)
+            </li>
+            <li class="js-add-to-story-block" data-story-id="@story.id">
+               @fragments.editor.add_to_story(story)
+            </li>
+            <li class="story__item--preview js-preview-box" style="display:none;">
+               @fragments.editor.add_to_story_preview(story)
+            </li>
+            @for(link <- story.links.sortBy(l => -l.createdAt)) {
+               <li class="story__item js-story-item" data-element-id="@link.id">
+                  <a href="#hide-this-item" class="story__hide-button accent js-hide-story-item" data-element-id="@link.id" data-story-id="@story.id"><span class="fa fa-close"></span></a>
+                  @link match {
+                     case t: TweetLinkJsonModel => {
+                        @fragments.editor.tweet(t)
+                     }
+                     case t: PlainLinkJsonModel => {
+                        @fragments.editor.link(t)
+                     }
+                     case t: VideoLinkJsonModel => {
+                        @fragments.editor.video(t)
+                     }
+                  }
+               </li>
+            }
+         </ul>
+      }
+   </main>
+}
+

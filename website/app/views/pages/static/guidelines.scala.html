@@ -1,0 +1,45 @@
+@()(implicit req: Request[Any], session: Option[com.grasswire.common.models.Session])
+
+@main(signature = "static-page", title = "About | Grasswire | The Internet's Newsroom") {
+
+   <header class="static-header">
+      <div class="static-wrapper">
+         <h1 class="static-header__headline">Guidelines</h1>
+      </div>
+   </header>
+   <main>
+      <div class="static-wrapper">
+         <div class="content-block">
+            <h3 class="content-block__headline">Rule of thumb: Grasswire is based on <em>facts</em>.</h3>
+            <p>Grasswire must be neutral, and the information gathering done on Grasswire must be done from a neutral point of view.</p>
+
+            <h3 class="content-block__headline">What to Submit/Upvote</h3>
+            <p><em>Not all users will see submission options, as there is a karma threshold.</em></p>
+            <p><strong>On-Topic:</strong> Anything newsworthy - information about what is transpiring in the world based on factual evidence. The more something affects the world population, the more newsworthy it is.</p>
+            <p><strong>Off-Topic:</strong> Opinion, speculation, political analysis, political cartoons, celebrity gossip. If you see these submissions, flag them. (Flagging is also subject to a karma threshold.)</p>
+
+            <h3 class="content-block__headline">Fact-Checks</h3>
+            <p>Fact-checks rely on <em>facts.</em></p>
+            <h4 class="content-block__sub-headline">What is a fact?</h4>
+            <p>Facts cannot be wrong. If something is wrong it is our understanding of the facts, not the facts themesleves.</p>
+            <p>Facts do not change based on one's opinion or political persuasion.</p>
+            <h4 class="content-block__sub-headline">How to gather facts</h4>
+            <ul class="content-block__list">
+               <li>The best sources for facts are those on the ground.</li>
+               <li>Media outlets get it wrong all the time, especially as news is breaking.</li>
+               <li>One bad source can be used by multiple media outlets. Find the root of the information to determine if a source is accurate.</li>
+               <li>Which media outlet something appeared on is neither proof of its truthfulness or untruthfulness. "This originated on [Fox News/MSNBC/SomeSource], which we all know to be [accurate/inaccurate/good/bad]" is rarely a valid argument. If it's incorrect, point to the fact that is incorrect, not the bias of the outlet.</li>
+               <li>"We're getting reports" means nothing.</li>
+               <li>Often times not all of the information to determine whether something is accurate is available. In those cases, one must either find a way to get the information or wait. Anything else is speculation.</li>
+            </ul>
+
+            <h3 class="content-block__headline">Comments</h3>
+            <p>Don't say things you wouldn't say in a face to face conversation.</p>
+            <p>Some words have become "loaded" and rarely contribute anything of value, unless used in their most literal sense. Some examples are "socialist," "fascist", "Nazi," "dictator" "lefty/righty" etc. Don't use these words except in their most literal sense.</p>
+            <p>When disagreeing, please reply to the argument instead of calling names. E.g. "That is an idiotic thing to say; 1 + 1 is 2, not 3" can be shortened to "1 + 1 is 2, not 3."</p>
+            <p>Please don't sign comments, especially with your url. They're already signed with your username.</p>
+            <p>Please don't use uppercase for emphasis.</p>
+         </div>
+      </div>
+   </main>
+}

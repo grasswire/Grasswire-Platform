@@ -1,0 +1,97 @@
+.digest {
+   &__container {
+      align-items: center;
+      background: get-color(light-boston-blue);
+      color: get-color(white);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin: 0 auto;
+      max-width: $max-content-width;
+      padding: 25px 30px;
+
+      @include media("<=medium") {
+         padding: 25px 5px;
+      }
+
+      @include media("<=small-tiny") {
+          padding: 25px 30px;
+      }
+   }
+
+   &__form {
+      flex-grow: 2;
+      order: 2;
+
+      @include media("<=medium") {
+         text-align: center;
+      }
+   }
+   &__text {
+      @include font-size(16px);
+      flex-grow: 1;
+      line-height: 1.6;
+      order: 1;
+
+      @include media("<=medium") {
+         padding-bottom: 10px;
+         text-align: center;
+      }
+   }
+
+   &__input-email {
+      @include font-size(16px);
+      @include placeholder(get-color(white));
+      background: get-color(shakespeare);
+      border: 0;
+      color: get-color(white);
+      line-height: 1.6;
+      margin: 0 30px 0 0;
+      padding: 5px;
+      width: 340px;
+
+      @include media("<=medium") {
+         margin: 0 15px 0 0;
+         width: 300px;
+      }
+
+      @include media("<=small-tiny") {
+         margin: 0 0 10px 0;
+         width: 100%;
+      }
+   }
+
+   &__input-button-join {
+      @include get-stack(regular);
+      @include font-size(16px);
+      background: get-color(shakespeare);
+      border: 0;
+      border-radius: 6px;
+      color: get-color(white);
+      line-height: 1.6;
+      margin: 0 10px 0 0;
+      padding: 5px 20px;
+      text-transform: uppercase;
+
+      @include media("<=small-tiny") {
+         float: left;
+      }
+   }
+
+   &__input-button-dismiss {
+      @include font-size(16px);
+      background: get-color(shakespeare);
+      border: 0;
+      border-radius: 50%;
+      color: get-color(light-boston-blue);
+      display: inline-block;
+      line-height: 1.6;
+      margin: 0;
+      padding: 5px 10px;
+      text-transform: uppercase;
+
+      @include media("<=small-tiny") {
+         float: right;
+      }
+   }
+}

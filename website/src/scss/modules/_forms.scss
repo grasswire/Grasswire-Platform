@@ -1,0 +1,124 @@
+
+.label {
+   @include standard-label;
+
+   &--full {
+      @include standard-label;
+      display: block;
+      margin: 10px 0;
+   }
+
+   &--inline {
+      @include standard-label;
+      display: inline-block;
+   }
+}
+
+
+.button {
+   @include standard-button(get-color(boston-blue));
+
+   &__standout {
+      @include font-size(22px);
+      display: block;
+      float: right;
+      margin-top: -3px;
+      margin-left: 12px;
+   }
+
+   &--secondary {
+      @include standard-button(get-color(texas-rose));
+      background: get-color(texas-rose);
+      color: get-color(white);
+   }
+
+   &--publish-changes {
+      @include standard-button(get-color(texas-rose));
+      background: get-color(texas-rose);
+      color: get-color(white);
+      padding: 10px;
+
+      &--iconic {
+         @include font-size(22px);
+         background: transparent;
+         color: get-color(texas-rose);
+      }
+   }
+   &--edit {
+      @include standard-button(get-color(silver));
+      background: get-color(silver);
+      color: get-color(white);
+   }
+   &--large {
+      @include standard-button(get-color(fountain-blue));
+      @include font-size(20px);
+      padding: 12px 24px;
+   }
+   &--iconic {
+      @include get-stack(regular);
+      @include font-size(22px);
+      background: transparent;
+      border: none;
+      color: get-color(white) !important;
+      display: inline-block;
+      margin: 0;
+      padding: 5px;
+      text-transform: uppercase;
+      width: auto;
+   }
+
+}
+
+.input {
+   &__textarea {
+      @include standard-input;
+      min-height: 150px;
+      width: 100%;
+   }
+
+   &__text {
+      @include standard-input;
+      @include font-size(16px);
+
+      &--small {
+         @include standard-input;
+         @include font-size(14px);
+         padding: 8px 20px;
+      }
+
+      &--full {
+         @include standard-input;
+         @include font-size(16px);
+         width: 100%;
+      }
+   }
+
+   &__number {
+      @include standard-input;
+      @include font-size(16px);
+      max-width: 75px;
+   }
+
+   &__link-content {
+      @include standard-input;
+      @include font-size(16px);
+      border: 2px solid get-color(pelorous);
+      width: 100%;
+   }
+
+   &__add-new-item {
+      @include standard-input;
+      @include font-size(16px);
+      padding: 8px 8px 10px 8px;
+      width: 100%;
+   }
+
+   &__add-new-item-error {
+      @include standard-input;
+      @include font-size(16px);
+      padding: 8px 8px 10px 8px;
+      margin: 10px 0;
+      min-height: 40px;
+      width: 100%;
+   }
+}

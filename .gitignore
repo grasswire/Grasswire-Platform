@@ -1,0 +1,63 @@
+# built application files
+*.o
+*.so
+*.apk
+*.ap_
+obj/
+# files for the dex VM
+*.dex
+
+# Java class files
+*.class
+
+# generated files
+bin/
+gen/
+out/
+.idea/
+*.iml
+
+# swap files
+.swp
+
+# Local configuration file (sdk path, etc)
+local.properties
+
+# Mac garbage
+.DS_Store
+
+*.log
+
+# sbt specific
+target/
+lib_managed/
+src_managed/
+project/boot/
+project/plugins/project/
+
+.classpath
+.project
+lint.xml
+
+data/
+logs/
+test-result/
+tmp/
+/.vagrant
+
+website/public/stylesheets/
+website/public/javascripts/
+website/node_modules/
+website/public/css/
+website/public/images/
+website/public/fonts/
+website/public/js/
+website/src/js/templates.tpl
+website/src/bower/
+.sass-cache
+npm-debug.log.*
+# eclipse garbage
+.settings/
+.cache
+
+website/test.html

@@ -1,0 +1,14 @@
+@import com.grasswire.common.json_models._
+@()(implicit request: Request[Any], session: Option[com.grasswire.common.models.Session])
+
+<div class="modal js-modal" data-modal-content-id="reorder" data-trigger-on-mobile="true">
+   <div class="modal__masthead">
+      <h2>Reorder</h2>
+      <h3>Drag stories to reorder</h3>
+      <a href="#" class="js-modal-close modal__closer"><span class="fa fa-close js-close-modal"></span></a>
+   </div>
+   <div class="modal__content js-modal-content js-order-list"></div>
+   <div class="modal__footer">
+      <button type="button" class="js-reorder button--secondary">Publish Your Changes <span class="fa fa-paper-plane"></span></button>
+   </div>
+</div>

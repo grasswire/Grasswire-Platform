@@ -1,0 +1,74 @@
+@import com.grasswire.common.json_models.TweetLinkJsonModel
+@import com.grasswire.common.json_models.PlainLinkJsonModel
+@import com.grasswire.common.json_models.VideoLinkJsonModel
+@(stories: List[com.grasswire.common.json_models.StoryJsonModel], storyId: Option[Long] = None)(implicit request: Request[Any], session: Option[com.grasswire.common.models.Session])
+
+@head = {
+   @if(stories.length <= 1) {
+      @for((story, index) <- stories.sortBy(s => s.rank).zipWithIndex) {
+         <title>@story.headline.getOrElse("") Grasswire &#124; Your Newsroom</title>
+         <meta name="description" content="@story.headline.getOrElse("Grasswire | Your Newsroom") Grasswire &#124; Your Newsroom">
+         <meta property="og:title" content='@story.headline.getOrElse("Grasswire | Your Newsroom")'>
+         <meta property="og:type" content="website">
+         <meta property="og:url" content="https://@(request.host + routes.Application.lookupStory(story.id, story.name.replaceAll("[^a-zA-Z0-9]+","-")))">
+         <meta property="og:image" content="@story.coverPhoto.getOrElse("https:"+CdnAssets.at("images/default-feature.png"))">
+         <meta property="og:description" content="Grasswire is a collaborative newsroom that anyone can edit and curate">
+         <meta name="twitter:card" content="summary_large_image">
+         <meta name="twitter:site" content="@@grasswire">
+         <meta name="twitter:url" content="https://@(request.host + routes.Application.lookupStory(story.id, story.name.replaceAll("[^a-zA-Z0-9]+","-")))">
+         <meta name="twitter:title" content="@story.headline.getOrElse("Grasswire | Your Newsroom")">
+         <meta name="twitter:description" content="Grasswire is a collaborative newsroom that anyone can edit and curate">
+         <meta name="twitter:creator" content="@@grasswire">
+         <meta name="twitter:image" content="@story.coverPhoto.getOrElse("https:"+CdnAssets.at("images/default-feature.png"))">
+      }
+   }else{
+      <title>Grasswire &#124; Your Newsroom</title>
+      <meta name="description" content="Grasswire &#124; Your Newsroom">
+      <meta property="og:title" content="Grasswire | Your Newsroom">
+      <meta property="og:type" content="website">
+      <meta property="og:url" content="https://@request.host">
+      <meta property="og:image" content="https:@CdnAssets.at("images/favicon.png")">
+      <meta property="og:description" content="Grasswire is a collaborative newsroom that anyone can edit and curate">
+      <meta name="twitter:card" content="summary_large_image">
+      <meta name="twitter:site" content="@@grasswire">
+      <meta name="twitter:title" content="Grasswire | Your Newsroom">
+      <meta name="twitter:description" content="Grasswire is a collaborative newsroom that anyone can edit and curate">
+      <meta name="twitter:creator" content="@@grasswire">
+      <meta name="twitter:image" content="https:@CdnAssets.at("images/favicon.png")">
+      <meta name="twitter:url" content="https://@request.host">
+   }
+}
+
+
+@main(signature = "reader", head = head, storyId = storyId) {
+   @fragments.reader.sidebar(stories)
+
+   <main class="content-container">
+      @for((story, index) <- stories.sortBy(s => s.rank).zipWithIndex) {
+         <ul class="story__list js-story-list" data-story-id="@story.id" id="feature-@story.id">
+            <li class="story__item--feature" data-type="feature">
+               @fragments.reader.feature(story)
+            </li>
+            @if(index == 0 && request.session.get(Security.username).isEmpty) {
+               @fragments.parts.email_digest()
+            }
+            @for(link <- story.links.sortBy(l => -l.createdAt)) {
+               <li class="story__item js-story-item" data-element-id="@link.id">
+                  @link match {
+                     case t: TweetLinkJsonModel => {
+                        @fragments.reader.tweet(t)
+                     }
+                     case t: PlainLinkJsonModel => {
+                        @fragments.reader.link(t)
+                     }
+                     case t: VideoLinkJsonModel => {
+                        @fragments.reader.video(t)
+                     }
+                  }
+               </li>
+            }
+         </ul>
+      }
+   </main>
+}
+

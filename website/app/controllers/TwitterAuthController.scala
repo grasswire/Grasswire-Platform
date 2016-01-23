@@ -12,10 +12,11 @@ import services.SessionService
 import scala.language.postfixOps
 import scala.concurrent.Await
 import com.grasswire.common.CommonConfig
+import api.Api
 
 object TwitterAuthController extends Controller {
 
-  val KEY = ConsumerKey(CommonConfig.TwitterConfig.Auth.consumerKey, CommonConfig.TwitterConfig.Auth.consumerSecret)
+  val KEY = ConsumerKey(Api.twitterConsumerKey, Api.twitterConsumerSecret)
   
   val TWITTER = OAuth(ServiceInfo(
     "https://api.twitter.com/oauth/request_token",

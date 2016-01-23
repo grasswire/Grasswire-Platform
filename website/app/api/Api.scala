@@ -30,6 +30,8 @@ object Api {
 
   val grasswireConfig: Config = ConfigFactory.load().getConfig("grasswire")
   val endpoint = grasswireConfig.getString("host") + grasswireConfig.getString("apiVersion")
+  val twitterConsumerKey = grasswireConfig.getString("twitter.consumer-key")
+  val twitterConsumerSecret = grasswireConfig.getString("twitter.consumer-secret")
 
 
   def postJsonGetJsonAction[A: Reads : Writes](holder: WSRequestHolder)(implicit ec: ExecutionContext): Action[JsValue] = Action.async(BodyParsers.parse.json) { implicit req =>

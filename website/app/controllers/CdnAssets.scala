@@ -38,10 +38,6 @@ object CdnAssets {
   }
 
   def at(file: String): String = {
-    if (inDevelopmentMode) {
       "/assets/" + file
-    } else {
-      url(s"/$file?r=$versionStamp")
-    }
   }
 }

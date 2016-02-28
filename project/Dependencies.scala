@@ -49,7 +49,7 @@ object Dependencies {
   val slickVersion = "3.1.0"
   val slick = "com.typesafe.slick" %% "slick" % slickVersion withSources()
   val slickHickaricp = "com.typesafe.slick" %% "slick-hikaricp" % slickVersion withSources()
-  val postgresdriver = "org.postgresql" % "postgresql" % "9.4-1204-jdbc42"
+  val postgresdriver =  "org.postgresql" % "postgresql" % "9.3-1100-jdbc41" 
   val hikariCP = "com.zaxxer" % "HikariCP" % "2.4.1"
 
   //joda

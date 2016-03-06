@@ -1,7 +1,7 @@
 @()(implicit req: Request[Any], session: Option[com.grasswire.common.models.Session])
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-<script>if (! window.jQuery) { document.write ('<script src="@CdnAssets.at("js/jquery.min.js") "><\/script>'); }</script>
-<script src="@CdnAssets.at("js/app.min.js")"></script>
+<script>if (! window.jQuery) { document.write ('<script src="@Assets.at("/public", "js/jquery.min.js") "><\/script>'); }</script>
+<script src="@Assets.at("/public", "js/app.min.js")"></script>
 <script>
    @if(req.host == "grasswire.com") {
       log.setLevel("error")

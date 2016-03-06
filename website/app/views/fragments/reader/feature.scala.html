@@ -2,7 +2,7 @@
 <div class="js-wrapper wrapper">
    <div class="js-image-container feature__image-container">
       <div class="feature__gradient"></div>
-      <img class="feature__image js-image-checker" src="@story.coverPhoto.getOrElse(CdnAssets.at("images/default-feature.png"))" alt="">
+      <img class="feature__image js-image-checker" src="@story.coverPhoto.getOrElse(Assets.at("/public", "images/default-feature.png"))" alt="">
    </div>
    <div class="feature">
       <div class="feature__tag-wrapper">

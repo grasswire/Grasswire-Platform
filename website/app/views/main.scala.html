@@ -6,13 +6,13 @@
       @head
       <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
       <link type="text/css" rel="stylesheet" href="//fast.fonts.net/cssapi/b2525f06-719e-4e1a-9a0b-254100d30a04.css">
-      <link rel="shortcut icon" href="@Assets.at("/public", "images/favicon.png")" type="image/png">
-      <link rel="icon" href="@Assets.at("/public", "images/favicon.png")" type="image/png">
+      <link rel="shortcut icon" href="@routes.Assets.at("/public", "images/favicon.png")" type="image/png">
+      <link rel="icon" href="@routes.Assets.at("/public", "images/favicon.png")" type="image/png">
       <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
       @fragments.parts.scripts_head()
-      <link rel="stylesheet" href="@Assets.at("/public", "css/main.css")">
+      <link rel="stylesheet" href="@routes.Assets.at("/public", "css/main.css")">
    </head>
-   <body class="@signature" data-tag="@{tag.getOrElse("all")}" data-is-logged-in="@request.session.get(Security.username).nonEmpty" data-default-image="@Assets.at("/public", "images/default-feature.png")">
+   <body class="@signature" data-tag="@{tag.getOrElse("all")}" data-is-logged-in="@request.session.get(Security.username).nonEmpty" data-default-image="@routes.Assets.at("/public", "images/default-feature.png")">
       @fragments.parts.masthead(storyId)
       @fragments.parts.message_bar()
       @body

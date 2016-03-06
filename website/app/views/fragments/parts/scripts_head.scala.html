@@ -1,5 +1,5 @@
 @()(implicit req: Request[Any])
-   <script src="@Assets.at("/public", "js/modernizr.min.js")"></script>
+   <script src="@routes.Assets.at("/public", "js/modernizr.min.js")"></script>
    <script src="@routes.Application.javascriptRoutes" defer></script>
 <script>
   !function(g,s,q,r,d){r=g[r]=g[r]||function(){(r.q=r.q||[]).push(

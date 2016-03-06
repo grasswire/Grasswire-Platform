@@ -1,6 +1,6 @@
 @(story: com.grasswire.common.json_models.StoryJsonModel)(implicit request: Request[Any], session: Option[com.grasswire.common.models.Session])
 <div class="sidebar__content">
-   <div class="js-image-container sidebar__image-container" style="background: url(@story.coverPhoto.getOrElse(Assets.at("/public", "images/default-feature.png")))">
+   <div class="js-image-container sidebar__image-container" style="background: url(@story.coverPhoto.getOrElse(routes.Assets.at("/public", "images/default-feature.png")))">
    <div class="sidebar__backdrop"></div>
       <div class="sidebar__textblock">
          <div class="sidebar__tag-wrapper">

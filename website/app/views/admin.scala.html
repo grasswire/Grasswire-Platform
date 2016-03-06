@@ -7,11 +7,11 @@
       <meta name="description" content="Grasswire &#124; Your Newsroom">
       <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
       <link type="text/css" rel="stylesheet" href="//fast.fonts.net/cssapi/b2525f06-719e-4e1a-9a0b-254100d30a04.css">
-      <link rel="shortcut icon" href="@Assets.at("/public", "images/favicon.png")" type="image/png">
-      <link rel="icon" href="@Assets.at("/public", "images/favicon.png")" type="image/png">
+      <link rel="shortcut icon" href="@routes.Assets.at("/public", "images/favicon.png")" type="image/png">
+      <link rel="icon" href="@routes.Assets.at("/public", "images/favicon.png")" type="image/png">
       <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
       @fragments.admin.parts.scripts_head()
-      <link rel="stylesheet" href="@Assets.at("/public", "css/admin.css")">
+      <link rel="stylesheet" href="@routes.Assets.at("/public", "css/admin.css")">
       @head
    </head>
    <body class="@signature" data-tag="@{tag.getOrElse("all")}" data-is-logged-in="@request.session.get(Security.username).nonEmpty">

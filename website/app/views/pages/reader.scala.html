@@ -11,7 +11,7 @@
          <meta property="og:title" content='@story.headline.getOrElse("Grasswire | Your Newsroom")'>
          <meta property="og:type" content="website">
          <meta property="og:url" content="https://@(request.host + routes.Application.lookupStory(story.id, story.name.replaceAll("[^a-zA-Z0-9]+","-")))">
-         <meta property="og:image" content="@story.coverPhoto.getOrElse("https:"+Assets.at("/public", "images/default-feature.png"))">
+         <meta property="og:image" content="@story.coverPhoto.getOrElse("https:"+routes.Assets.at("/public", "images/default-feature.png"))">
          <meta property="og:description" content="Grasswire is a collaborative newsroom that anyone can edit and curate">
          <meta name="twitter:card" content="summary_large_image">
          <meta name="twitter:site" content="@@grasswire">
@@ -19,7 +19,7 @@
          <meta name="twitter:title" content="@story.headline.getOrElse("Grasswire | Your Newsroom")">
          <meta name="twitter:description" content="Grasswire is a collaborative newsroom that anyone can edit and curate">
          <meta name="twitter:creator" content="@@grasswire">
-         <meta name="twitter:image" content="@story.coverPhoto.getOrElse("https:"+Assets.at("/public", "images/default-feature.png"))">
+         <meta name="twitter:image" content="@story.coverPhoto.getOrElse("https:"+routes.Assets.at("/public", "images/default-feature.png"))">
       }
    }else{
       <title>Grasswire &#124; Your Newsroom</title>
@@ -27,14 +27,14 @@
       <meta property="og:title" content="Grasswire | Your Newsroom">
       <meta property="og:type" content="website">
       <meta property="og:url" content="https://@request.host">
-      <meta property="og:image" content="https:@Assets.at("/public", "images/favicon.png")">
+      <meta property="og:image" content="https:@routes.Assets.at("/public", "images/favicon.png")">
       <meta property="og:description" content="Grasswire is a collaborative newsroom that anyone can edit and curate">
       <meta name="twitter:card" content="summary_large_image">
       <meta name="twitter:site" content="@@grasswire">
       <meta name="twitter:title" content="Grasswire | Your Newsroom">
       <meta name="twitter:description" content="Grasswire is a collaborative newsroom that anyone can edit and curate">
       <meta name="twitter:creator" content="@@grasswire">
-      <meta name="twitter:image" content="https:@Assets.at("/public", "images/favicon.png")">
+      <meta name="twitter:image" content="https:@routes.Assets.at("/public", "images/favicon.png")">
       <meta name="twitter:url" content="https://@request.host">
    }
 }
